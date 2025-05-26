@@ -1,0 +1,167 @@
+{
+    "projects": [
+        { 
+            "name": "Portfolio Website",
+            "url_name": "portfolio_website",
+            "technologies": [
+                "svelte",
+                "typescript",
+                "tailwindcss",
+                "html5",
+                "css3",
+                "figma"
+            ],
+            "img_name": "dog.jpg"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "cplusplus",
+                "docker",
+                "nginx"
+            ],
+            "img_name": "favicon.png"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "unity",
+                "csharp",
+                "blender"
+            ],
+            "img_name": "favicon.png"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "cplusplus",
+                "docker",
+                "nginx"
+            ],
+            "img_name": "favicon.png"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "cplusplus",
+                "docker",
+                "nginx"
+            ],
+            "img_name": "favicon.png"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "cplusplus",
+                "docker",
+                "nginx"
+            ],
+            "img_name": "favicon.png"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "cplusplus",
+                "docker",
+                "nginx"
+            ],
+            "img_name": "favicon.png"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "cplusplus",
+                "docker",
+                "nginx"
+            ],
+            "img_name": "favicon.png"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "cplusplus",
+                "docker",
+                "nginx"
+            ],
+            "img_name": "favicon.png"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "cplusplus",
+                "docker",
+                "nginx"
+            ],
+            "img_name": "favicon.png"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "cplusplus",
+                "docker",
+                "nginx"
+            ],
+            "img_name": "favicon.png"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "cplusplus",
+                "docker",
+                "nginx"
+            ],
+            "img_name": "favicon.png"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "cplusplus",
+                "docker",
+                "nginx"
+            ],
+            "img_name": "favicon.png"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "cplusplus",
+                "docker",
+                "nginx"
+            ],
+            "img_name": "favicon.png"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "cplusplus",
+                "docker",
+                "nginx"
+            ],
+            "img_name": "favicon.png"
+        },
+        {
+            "name": "Test",
+            "url_name": "test",
+            "technologies": [
+                "cplusplus",
+                "docker",
+                "nginx"
+            ],
+            "img_name": "favicon.png"
+        }
+    ]
+}

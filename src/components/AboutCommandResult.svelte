@@ -1,8 +1,17 @@
-<script>
-    
+<script lang="ts">
+	import type { Action } from "svelte/action";
+
+    let { focusCommand }: { focusCommand: () => void } = $props();
+    $effect(() => {
+        focusCommand();
+    });
+    let focus: Action = (_) => {
+        focusCommand();
+    };
 </script>
 
-<section class="flex flex-row gap-4">
+<section use:focus class="flex flex-row gap-4 border-2 border-sky-300 rounded-md p-2 w-max animate-grow-fade-in">
+    {focusCommand()}
     <img class="rounded-md shadow-lg" src={"/dog.jpg"} alt="e">
     <div class="flex flex-col dark:text-gray-50 h-auto">
         <h2 class="text-2xl font-bold">Alexander Smart</h2>

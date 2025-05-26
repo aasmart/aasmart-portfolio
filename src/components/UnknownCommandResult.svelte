@@ -1,5 +1,11 @@
 <script lang="ts">
-    let { name }: { name: string } = $props();
+	import type { Action } from "svelte/action";
+
+    let { name, focusCommand }: { name: string, focusCommand: () => void } = $props();
+
+    let focus: Action = (_) => {
+        focusCommand();
+    }
 </script>
 
-<p class="dark:text-gray-50">Unrecognized command '{name}'</p>
+<p use:focus class="dark:text-gray-50">Unrecognized command '{name}'</p>

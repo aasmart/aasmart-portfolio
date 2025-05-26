@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { tick } from "svelte"
 	import Command from "../components/Command.svelte";
 	import CommandInput from "../components/CommandInput.svelte";
     // let counter = $state(0);
@@ -19,18 +20,50 @@
     import NavButton from "../components/NavButton.svelte";
     import PromptArrow from "../components/PromptArrow.svelte";
 	import UnknownCommandResult from "../components/UnknownCommandResult.svelte";
+	import { scrollToBottom } from "../util/scroll";
 
     let terminalHistory: string[] = $state([]);
 
     let terminalInput = $state("");
+    // svelte-ignore non_reactive_update
+    let terminalHistoryList: HTMLElement;
     function submitTerminalInput(e: KeyboardEvent) {
         const key = e.code || e.key;
         if(key == "Enter") {
-            terminalHistory.push(terminalInput);
+            if(terminalInput === "clear") {
+                terminalHistory = [];
+            } else {
+                terminalHistory.push(terminalInput);
+            }
             terminalInput = "";
         }
     }
+
+    // $effect.pre(() => {
+    //     console.log(`E: ${terminalHistory}`)
+    //     if(!terminalHistoryList)
+    //         return;
+    //     tick().then(() => { scrollToBottom(terminalHistoryList) }) 
+    // });
+
+    function clearShortcut(e: KeyboardEvent) {
+        if(e.ctrlKey && e.key == 'l') {
+            terminalHistory = [];
+            e.preventDefault();
+        }
+    }
+
+    let scrolling = $state(false);
+    let atBottom = $state(true);
+    let onScroll = function() {
+        if(!terminalHistoryList)
+            return false;
+        scrolling = terminalHistoryList.scrollTop > 0;
+        atBottom = (terminalHistoryList.scrollHeight - terminalHistoryList.scrollTop <= terminalHistoryList.clientHeight + 1);
+    };
 </script>
+
+<svelte:window onkeydown={clearShortcut}/>
 
 <!-- <div class="flex justify-center items-center flex-col outline-4 h-dvh gap-4">
     <button 
@@ -49,8 +82,8 @@
 </div> -->
 
 <header>
-    <nav>
-        <div class="sticky flex flex-row items-center h-12 gap-4">
+    <nav class="sticky { scrolling ? "shadow-xl" : "" } py-2 m-0 transition-shadow duration-300">
+        <div class="sflex flex-row items-center h-12 gap-4">
             <h1 class="text-gray-900 dark:text-gray-50 text-4xl"><span class="text-sky-400">❯</span> aasmart</h1>
         </div>
         <ul class="flex flex-row gap-2">
@@ -61,13 +94,13 @@
     </nav>
 </header>
 
-<ul>
-    {#each terminalHistory as history}
+<ul bind:this={terminalHistoryList} class="h-full overflow-y-scroll" onscroll={onScroll}>
+    {#each terminalHistory as history, index}
         <li class="my-2">
-            <Command name={history}/>
+            <Command name={history} isLastCommand={index == terminalHistory.length - 1} />
         </li>
     {/each}
-    <li class="my-2">
+    <li id="command-prompt" class="my-2 sticky bottom-0">
         <CommandInput class="dark:text-gray-50 text-2xl" bind:commandText={terminalInput} submitCommand={submitTerminalInput}/>
     </li>
 </ul>

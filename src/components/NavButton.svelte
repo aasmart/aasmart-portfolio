@@ -6,6 +6,6 @@
     }
 </script>
 
-<button class="bg-gray-50 rounded-md p-1" onclick={addToHistory}>
+<button class="bg-transparent border-sky-300 border-2 hover:bg-sky-400 transition-color duration-150 rounded-md text-gray-900 dark:text-gray-50 p-2 font-bold" onclick={addToHistory}>
     $ { command }
 </button>
