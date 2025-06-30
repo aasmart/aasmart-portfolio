@@ -52,16 +52,18 @@
 		<span class="font-bold text-amber-500 dark:text-amber-400">{item.title}</span>
 	</h3>
 	<div>
-		<p class="text-lg text-gray-400 dark:text-gray-400">
-			<span class="font-bold text-gray-700 dark:text-gray-200"> {item.name}</span>
-			- {formattedStartDate} to
-			{#if isCurrent}
-				<span class="font-medium text-blue-400"> Present</span>
-			{:else}
-				{formattedEndDate}
-			{/if}
+		<p>
+			<span class="inline-block font-bold text-gray-700 dark:text-gray-200"> {item.name}</span>
+			<span class="inline-block text-gray-400 dark:text-gray-400">
+				({formattedStartDate} -
+				{#if isCurrent}
+					<span class="font-medium text-blue-400"> Present</span>
+				{:else}
+					{formattedEndDate}
+				{/if})
+			</span>
 		</p>
-		<div class="whitespace-pre-line text-lg dark:border-gray-600">
+		<div class="whitespace-pre-line dark:border-gray-600">
 			<p class="text-gray-800 dark:text-gray-200">
 				{item.description}
 			</p>

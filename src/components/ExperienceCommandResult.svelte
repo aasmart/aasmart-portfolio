@@ -19,15 +19,6 @@
 		requestFocus();
 	};
 
-	let expandedIndex = $state(0);
-	let cycleExpandedIndex = (experiences: [ExperienceItem]) => {
-		expandedIndex += 1;
-		console.log(expandedIndex, experiences.length);
-		if (expandedIndex >= experiences.length) {
-			expandedIndex = 0;
-		}
-	};
-
 	// const placeholderExperience = {
 	//        title: "experience.title",
 	//        name: "experience.name",
@@ -41,13 +32,15 @@
 {#await experiencePromise}
 	<p>Loading...</p>
 {:then experience}
-	<section use:focus class="flex w-min min-w-max flex-col text-gray-900 dark:text-gray-50">
-		<h2 class="flex w-full items-center gap-4 text-xl">
+	<section use:focus class="flex w-max max-w-full flex-col text-gray-900 dark:text-gray-50">
+		<h2 class="w-full items-center text-xl">
 			<span class="font-bold text-blue-400">for</span>
-			<span>experience</span>
+			<span>exp</span>
 			<span class="font-bold text-blue-400">in</span>
-			(<span class="text-gray-400">... {experience['experiences'].length} experiences ...</span>);
-			<span class="font-bold text-blue-400">do</span>
+			(<span class="whitespace-nowrap text-gray-400"
+				>...{experience['experiences'].length} experiences...</span
+			>);
+			<span class="inline-block font-bold text-blue-400">do</span>
 		</h2>
 
 		<ul class="flex flex-col gap-4 border-l-4 border-gray-300 pl-4 dark:border-gray-600">

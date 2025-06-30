@@ -8,7 +8,7 @@
 		technologies: string[];
 	};
 
-	let { project, key: number }: { project: Project; key: number } = $props();
+	let { project }: { project: Project; key: number } = $props();
 
 	let isInView = $state(false);
 	let element: HTMLElement | undefined = $state();
