@@ -19,7 +19,7 @@
 			Found <span class="font-bold text-blue-400">{projects['projects'].length}</span> projects...
 		</p>
 
-		<div class="grid grid-cols-[repeat(auto-fill,clamp(18em,23%,24.5em))] gap-6">
+		<div class="grid grid-cols-1 gap-6 sm:grid-cols-[repeat(auto-fill,clamp(18em,23%,24.5em))]">
 			{#each projects['projects'] as project, index}
 				<ProjectCard {project} key={index} />
 			{/each}
