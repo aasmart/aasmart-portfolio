@@ -1,0 +1,28 @@
+{
+    "experiences": [
+        {
+            "name": "Future of Programming Lab",
+            "title": "Software Engineer",
+            "description": "Developed various applications using modern technologies.",
+            "start_date": "01-01-2020",
+            "end_date": "01-01-2021",
+            "skills": [
+                "JavaScript",
+                "React",
+                "Node.js"
+            ]
+        },
+        {
+            "name": "Experience 1",
+            "title": "Software Engineer",
+            "description": "Developed various applications using modern technologies.",
+            "start_date": "01-01-2020",
+            "end_date": "01-01-2021",
+            "skills": [
+                "JavaScript",
+                "React",
+                "Node.js"
+            ]
+        }
+    ]
+}
