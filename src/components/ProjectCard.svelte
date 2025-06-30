@@ -8,7 +8,7 @@
 		technologies: string[];
 	};
 
-	let { project }: { project: Project; key: number } = $props();
+	let { project, key: number }: { project: Project; key: number } = $props();
 
 	let isInView = $state(false);
 	let element: HTMLElement | undefined = $state();
@@ -61,4 +61,3 @@
 		</a>
 	</div>
 </div>
-

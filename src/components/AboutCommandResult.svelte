@@ -12,7 +12,7 @@
 
 <section
 	use:focus
-	class="flex w-max animate-grow-fade-in flex-row gap-4 rounded-md border-2 border-blue-400 p-2"
+	class="flex w-max max-w-full animate-grow-fade-in flex-col gap-4 rounded-md border-2 border-blue-400 p-2 sm:flex-row"
 >
 	{focusCommand()}
 	<img class="rounded-md shadow-lg" src={'/dog.jpg'} alt="e" />
@@ -24,7 +24,7 @@
 			Hi! <span>👋</span> I'm currently an undergraduate student at the University of Michigan -- Ann
 			Arbor.
 		</p>
-		<ul class="mt-auto flex flex-row gap-3 text-4xl">
+		<ul class="mt-auto flex flex-row gap-3 pt-2 text-4xl">
 			<li>
 				<a
 					class="text-blue-400 transition-colors duration-200 hover:text-blue-500 focus:text-blue-500"
@@ -46,4 +46,3 @@
 		</ul>
 	</div>
 </section>
-

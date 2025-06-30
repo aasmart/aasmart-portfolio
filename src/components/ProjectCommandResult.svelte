@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { Action } from 'svelte/action';
-
 	import ProjectCard from './ProjectCard.svelte';
 
 	let { focusCommand }: { focusCommand: () => void } = $props();
