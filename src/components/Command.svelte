@@ -9,8 +9,14 @@
 	let {
 		name,
 		isLastCommand,
+		tryRestoreScrollPosition,
 		clearTerminal
-	}: { name: string; isLastCommand: boolean; clearTerminal: () => void } = $props();
+	}: {
+		name: string;
+		isLastCommand: boolean;
+		tryRestoreScrollPosition: () => boolean;
+		clearTerminal: () => void;
+	} = $props();
 	let commandName: HTMLParagraphElement;
 	let nameLower = $state(name.toLocaleLowerCase());
 
@@ -23,10 +29,12 @@
 
 	let focusAction: Action = (node: HTMLElement) => {
 		if (node && isLastCommand) {
-			node.scrollIntoView({
-				behavior: 'smooth',
-				block: 'start'
-			});
+			if (!tryRestoreScrollPosition()) {
+				node.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				});
+			}
 		}
 	};
 </script>
