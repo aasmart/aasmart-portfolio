@@ -48,9 +48,11 @@
 				<i class="fa-solid fa-arrow-up-right-from-square m-0 aspect-square text-xl text-blue-400"
 				></i>
 			</div>
+
 			<div class="h-20 w-full grow p-0">
-				<img class="w-full overflow-hidden object-contain" src="/{project['img_name']}" alt="t" />
+				<img class="h-full w-full overflow-hidden" src="/{project['img_name']}" alt="t" />
 			</div>
+
 			<div class="flex flex-col items-center gap-1 bg-gray-100 p-1 text-xl dark:bg-[#292929]">
 				<h3 class="text-center dark:text-gray-50">{project['name']}</h3>
 				<ul class="flex flex-row gap-2">

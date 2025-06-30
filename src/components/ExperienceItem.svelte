@@ -57,7 +57,7 @@
 			<span class="inline-block text-gray-400 dark:text-gray-400">
 				({formattedStartDate} -
 				{#if isCurrent}
-					<span class="font-medium text-blue-400"> Present</span>
+					<span class="font-bold text-blue-400"> Present</span>
 				{:else}
 					{formattedEndDate}
 				{/if})

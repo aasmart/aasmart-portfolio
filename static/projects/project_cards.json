@@ -1,6 +1,6 @@
 {
     "projects": [
-        { 
+        {
             "name": "Portfolio Website",
             "url_name": "portfolio_website",
             "technologies": [
@@ -11,157 +11,15 @@
                 "css3",
                 "figma"
             ],
-            "img_name": "dog.jpg"
+            "img_name": "portfolio.png"
         },
         {
-            "name": "Test",
-            "url_name": "test",
+            "name": "More projects coming soon...",
+            "url_name": "wip",
             "technologies": [
-                "cplusplus",
-                "docker",
-                "nginx"
+                "cplusplus"
             ],
-            "img_name": "favicon.png"
-        },
-        {
-            "name": "Test",
-            "url_name": "test",
-            "technologies": [
-                "unity",
-                "csharp",
-                "blender"
-            ],
-            "img_name": "favicon.png"
-        },
-        {
-            "name": "Test",
-            "url_name": "test",
-            "technologies": [
-                "cplusplus",
-                "docker",
-                "nginx"
-            ],
-            "img_name": "favicon.png"
-        },
-        {
-            "name": "Test",
-            "url_name": "test",
-            "technologies": [
-                "cplusplus",
-                "docker",
-                "nginx"
-            ],
-            "img_name": "favicon.png"
-        },
-        {
-            "name": "Test",
-            "url_name": "test",
-            "technologies": [
-                "cplusplus",
-                "docker",
-                "nginx"
-            ],
-            "img_name": "favicon.png"
-        },
-        {
-            "name": "Test",
-            "url_name": "test",
-            "technologies": [
-                "cplusplus",
-                "docker",
-                "nginx"
-            ],
-            "img_name": "favicon.png"
-        },
-        {
-            "name": "Test",
-            "url_name": "test",
-            "technologies": [
-                "cplusplus",
-                "docker",
-                "nginx"
-            ],
-            "img_name": "favicon.png"
-        },
-        {
-            "name": "Test",
-            "url_name": "test",
-            "technologies": [
-                "cplusplus",
-                "docker",
-                "nginx"
-            ],
-            "img_name": "favicon.png"
-        },
-        {
-            "name": "Test",
-            "url_name": "test",
-            "technologies": [
-                "cplusplus",
-                "docker",
-                "nginx"
-            ],
-            "img_name": "favicon.png"
-        },
-        {
-            "name": "Test",
-            "url_name": "test",
-            "technologies": [
-                "cplusplus",
-                "docker",
-                "nginx"
-            ],
-            "img_name": "favicon.png"
-        },
-        {
-            "name": "Test",
-            "url_name": "test",
-            "technologies": [
-                "cplusplus",
-                "docker",
-                "nginx"
-            ],
-            "img_name": "favicon.png"
-        },
-        {
-            "name": "Test",
-            "url_name": "test",
-            "technologies": [
-                "cplusplus",
-                "docker",
-                "nginx"
-            ],
-            "img_name": "favicon.png"
-        },
-        {
-            "name": "Test",
-            "url_name": "test",
-            "technologies": [
-                "cplusplus",
-                "docker",
-                "nginx"
-            ],
-            "img_name": "favicon.png"
-        },
-        {
-            "name": "Test",
-            "url_name": "test",
-            "technologies": [
-                "cplusplus",
-                "docker",
-                "nginx"
-            ],
-            "img_name": "favicon.png"
-        },
-        {
-            "name": "Test",
-            "url_name": "test",
-            "technologies": [
-                "cplusplus",
-                "docker",
-                "nginx"
-            ],
-            "img_name": "favicon.png"
+            "img_name": "portfolio.png"
         }
     ]
 }

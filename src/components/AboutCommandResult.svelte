@@ -15,7 +15,7 @@
 	class="flex w-max max-w-full animate-grow-fade-in flex-col gap-4 rounded-md border-2 border-blue-400 p-2 sm:flex-row"
 >
 	{focusCommand()}
-	<img class="rounded-md shadow-lg" src={'/dog.jpg'} alt="e" />
+	<img class="aspect-square max-w-[16em] rounded-md shadow-lg" src={'/me.png'} alt="Me" />
 	<div class="flex h-auto flex-col dark:text-gray-50">
 		<h2 class="text-xl font-bold">Alexander Smart</h2>
 		<h3 class="text-lg dark:text-gray-100">Software Engineer</h3>

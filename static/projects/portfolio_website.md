@@ -1,6 +1,6 @@
-# Test
+# Hello World
 
-Send help
+I will get around to writing these at some point.
 
 ```c++
 #include <iostream>
@@ -10,3 +10,4 @@ auto main() -> int {
     return 0;
 }
 ```
+

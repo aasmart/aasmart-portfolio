@@ -2,27 +2,29 @@
     "experiences": [
         {
             "name": "Future of Programming Lab",
-            "title": "Software Engineer",
-            "description": "Developed various applications using modern technologies.",
-            "start_date": "01-01-2020",
-            "end_date": "01-01-2021",
+            "title": "Language Developer",
+            "description": "Extending the language with novel new features",
+            "start_date": "05-01-2025",
             "skills": [
-                "JavaScript",
-                "React",
-                "Node.js"
+                "ReasonML",
+                "Ocaml"
             ]
         },
         {
-            "name": "Experience 1",
-            "title": "Software Engineer",
-            "description": "Developed various applications using modern technologies.",
-            "start_date": "01-01-2020",
-            "end_date": "01-01-2021",
+            "name": "EECS281 (DS&A) @ UofM",
+            "title": "Instructional Aide (TA)",
+            "description": "Improving both student's understanding of complex topics, \nas well as the course by renovating aging lecture materials",
+            "start_date": "08-01-2024",
             "skills": [
-                "JavaScript",
-                "React",
-                "Node.js"
+                "Teaching"
             ]
+        },
+        {
+            "name": "WIP",
+            "title": "Experiences work in progress...",
+            "description": "Things take time to do well :)",
+            "start_date": "08-01-2024",
+            "skills": []
         }
     ]
 }
