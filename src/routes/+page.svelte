@@ -109,12 +109,11 @@
 			? 'border-b-2 shadow-md'
 			: ''} m-0 border-neutral-50 py-2 transition-shadow duration-300 dark:border-neutral-900"
 	>
-		<div class="sflex h-12 flex-row items-center gap-4">
-			<h1 class="text-4xl text-gray-900 dark:text-gray-50">
-				<span class="text-blue-400">❯</span> aasmart
-			</h1>
-		</div>
-		<ul class="flex flex-row gap-2">
+		<h1 class="flex h-12 flex-row items-center gap-2 text-4xl text-gray-900 dark:text-gray-50">
+			<span class="h-min text-center text-blue-400">❯</span>
+			<span class="h-min text-center">aasmart</span>
+		</h1>
+		<ul class="flex flex-row flex-wrap gap-2">
 			<NavButton command={'about'} bind:terminalHistory />
 			<NavButton command={'projects'} bind:terminalHistory />
 			<NavButton command={'experience'} bind:terminalHistory />

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { Action } from 'svelte/action';
 	import ExperienceItem from './ExperienceItem.svelte';
-	import { deserialize } from '$app/forms';
 
 	let { requestFocus }: { requestFocus: () => void } = $props();
 
