@@ -24,15 +24,11 @@
 
 	let terminalInput = $state('');
 	// svelte-ignore non_reactive_update
-	let terminalHistoryList: HTMLElement;
+	let terminalHistoryElement: HTMLElement;
 	function submitTerminalInput(e: KeyboardEvent) {
 		const key = e.code || e.key;
 		if (key == 'Enter') {
-			if (terminalInput === 'clear') {
-				terminalHistory = [];
-			} else {
-				terminalHistory.push(terminalInput);
-			}
+			terminalHistory.push(terminalInput);
 			terminalInput = '';
 		}
 	}
@@ -45,8 +41,8 @@
 		const scrollTop = window.sessionStorage.getItem('terminalHistoryScrollTop');
 		if (scrollTop) {
 			const scrollTopNum = parseInt(scrollTop);
-			if (terminalHistoryList && !isNaN(scrollTopNum)) {
-				terminalHistoryList.scrollTop = scrollTopNum;
+			if (terminalHistoryElement && !isNaN(scrollTopNum)) {
+				terminalHistoryElement.scrollTop = scrollTopNum;
 			}
 		}
 	});
@@ -62,30 +58,34 @@
 	//     tick().then(() => { scrollToBottom(terminalHistoryList) })
 	// });
 
-	function clearShortcut(e: KeyboardEvent) {
-		if (e.ctrlKey && e.key == 'l') {
-			terminalHistory = [];
-			e.preventDefault();
-		}
+	function clearTerminal() {
+		terminalHistory = [];
 	}
+
+	// function checkShortcut(e: KeyboardEvent) {
+	// 	if (e.ctrlKey && e.key == 'l') {
+	// 		clearTerminal();
+	// 		e.preventDefault();
+	// 	}
+	// }
 
 	let scrolling = $state(false);
 	let atBottom = $state(true);
 	let onScroll = function () {
-		if (!terminalHistoryList) return false;
-		scrolling = terminalHistoryList.scrollTop > 0;
+		if (!terminalHistoryElement) return false;
+		scrolling = terminalHistoryElement.scrollTop > 0;
 		atBottom =
-			terminalHistoryList.scrollHeight - terminalHistoryList.scrollTop <=
-			terminalHistoryList.clientHeight + 1;
+			terminalHistoryElement.scrollHeight - terminalHistoryElement.scrollTop <=
+			terminalHistoryElement.clientHeight + 1;
 
 		window.sessionStorage.setItem(
 			'terminalHistoryScrollTop',
-			terminalHistoryList.scrollTop.toString()
+			terminalHistoryElement.scrollTop.toString()
 		);
 	};
 </script>
 
-<svelte:window onkeydown={clearShortcut} />
+<!-- <svelte:window onkeydown={checkShortcut} /> -->
 
 <!-- <div class="flex justify-center items-center flex-col outline-4 h-dvh gap-4">
     <button 
@@ -104,7 +104,11 @@
 </div> -->
 
 <header>
-	<nav class="sticky {scrolling ? 'shadow-xl' : ''} m-0 py-2 transition-shadow duration-300">
+	<nav
+		class="sticky px-4 {scrolling
+			? 'border-b-2 shadow-md'
+			: ''} m-0 border-neutral-50 py-2 transition-shadow duration-300 dark:border-neutral-900"
+	>
 		<div class="sflex h-12 flex-row items-center gap-4">
 			<h1 class="text-4xl text-gray-900 dark:text-gray-50">
 				<span class="text-blue-400">❯</span> aasmart
@@ -114,19 +118,20 @@
 			<NavButton command={'about'} bind:terminalHistory />
 			<NavButton command={'projects'} bind:terminalHistory />
 			<NavButton command={'experience'} bind:terminalHistory />
+			<NavButton command={'clear'} bind:terminalHistory />
 		</ul>
 	</nav>
 </header>
 
-<ul bind:this={terminalHistoryList} class="h-full overflow-y-scroll" onscroll={onScroll}>
+<ul bind:this={terminalHistoryElement} class="h-full overflow-y-scroll" onscroll={onScroll}>
 	{#each terminalHistory as history, index}
-		<li class="my-2">
-			<Command name={history} isLastCommand={index == terminalHistory.length - 1} />
+		<li class="my-2 px-4">
+			<Command name={history} isLastCommand={index == terminalHistory.length - 1} {clearTerminal} />
 		</li>
 	{/each}
-	<li id="command-prompt" class="sticky bottom-0 my-2">
+	<li class="command-prompt sticky bottom-0 my-2">
 		<CommandInput
-			class="text-2xl dark:text-gray-50"
+			class="px-4 text-2xl dark:text-gray-50"
 			bind:commandText={terminalInput}
 			submitCommand={submitTerminalInput}
 		/>

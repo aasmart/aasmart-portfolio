@@ -21,4 +21,3 @@
 		placeholder="Type commmand here..."
 	/>
 </div>
-

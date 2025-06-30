@@ -7,15 +7,15 @@
 
 <style>
 	@media (prefers-color-scheme: dark) {
-		:global(html, command-prompt) {
+		:global(html, #command-prompt, header) {
 			background-color: #202229;
 		}
-	} 	
+	}
 	@media (prefers-color-scheme: light) {
-		:global(html, command-prompt) {
+		:global(html, #command-prompt, header) {
 			background-color: #f9fafa;
 		}
-	} 	
+	}
 	:global(body) {
 		height: 100dvh;
 		display: flex;
@@ -24,10 +24,8 @@
 	:global(*, *::after, *::before) {
 		box-sizing: border-box;
 	}
-	:global(body > div > *) {
-		padding-inline: 24px;
-	}
 	:global(*:not(i), *:not(i)::after, *:not(i)::before) {
 		font-family: 'JetBrains Mono', monospace;
 	}
 </style>
+
