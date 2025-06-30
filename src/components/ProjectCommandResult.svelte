@@ -12,7 +12,7 @@
 </script>
 
 {#await projectsPromise}
-	<p>Loading...</p>
+	<p class="text-gray-900 dark:text-gray-50">Loading...</p>
 {:then projects}
 	<section use:focus class="min-w-max">
 		<p class="my-3 text-xl text-gray-900 dark:text-gray-50">

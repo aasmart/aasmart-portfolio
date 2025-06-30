@@ -29,7 +29,7 @@
 </script>
 
 {#await experiencePromise}
-	<p>Loading...</p>
+	<p class="text-gray-900 dark:text-gray-50">Loading...</p>
 {:then experience}
 	<section use:focus class="flex w-max max-w-full flex-col text-gray-900 dark:text-gray-50">
 		<h2 class="w-full items-center text-xl">
