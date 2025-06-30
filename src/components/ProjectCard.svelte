@@ -38,9 +38,16 @@
 		: ''} rounded-md border-2 border-blue-400 p-2 opacity-0 duration-300 hover:scale-105 hover:p-0"
 >
 	<div
-		class="h-full overflow-clip rounded-md bg-gray-300 p-0 shadow-md duration-300 hover:shadow-blue-400 dark:bg-gray-600"
+		class="relative h-full overflow-clip rounded-md bg-gray-300 p-0 shadow-md duration-300 hover:shadow-blue-400 dark:bg-gray-600"
 	>
 		<a href="/projects/{project['url_name']}" class="flex size-full flex-col p-0">
+			<div
+				class="absolute right-0 m-1 aspect-square rounded-lg bg-gray-900/80 p-2"
+				title="Learn more!"
+			>
+				<i class="fa-solid fa-arrow-up-right-from-square m-0 aspect-square text-xl text-blue-400"
+				></i>
+			</div>
 			<div class="h-20 w-full grow p-0">
 				<img class="w-full overflow-hidden object-contain" src="/{project['img_name']}" alt="t" />
 			</div>
