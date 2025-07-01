@@ -2,9 +2,7 @@
 	import type { Action } from 'svelte/action';
 
 	let { focusCommand }: { focusCommand: () => void } = $props();
-	$effect(() => {
-		focusCommand();
-	});
+
 	let focus: Action = (_) => {
 		focusCommand();
 	};
@@ -14,7 +12,6 @@
 	use:focus
 	class="flex max-w-[100rem] animate-grow-fade-in flex-col items-center gap-4 rounded-md border-2 border-blue-400 p-2 sm:w-3/4 lg:flex-row"
 >
-	{focusCommand()}
 	<img
 		class="aspect-square max-h-[18em] rounded-full shadow-lg sm:w-auto"
 		src={'/me.png'}

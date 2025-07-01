@@ -6,31 +6,33 @@
 		replaceState
 	} from '$app/navigation';
 	import { page } from '$app/state';
+	import type { Action } from 'svelte/action';
 	import Command from '../components/Command.svelte';
 	import CommandInput from '../components/CommandInput.svelte';
 	import NavButton from '../components/NavButton.svelte';
 
-	const terminalHistoryLimit = 10;
-	let terminalHistory: string[] = $state([]);
-
+	let terminalHistory: string[] = $state(tryRestoreHistory());
 	let terminalInput = $state('');
+	let updatedTerminalHistory = $state(false);
 	// svelte-ignore non_reactive_update
 	let terminalHistoryElement: HTMLElement;
+
+	function addToHistory(command: string) {
+		terminalHistory.push(command);
+		updatedTerminalHistory = true;
+	}
+
+	function clearTerminal() {
+		terminalHistory = [];
+	}
+
 	function submitTerminalInput(e: KeyboardEvent) {
 		const key = e.code || e.key;
 		if (key == 'Enter') {
-			terminalHistory.push(terminalInput);
+			addToHistory(terminalInput);
 			terminalInput = '';
 		}
 	}
-
-	$effect(() => {
-		console.log(page.state);
-		const historyJson = page.state.terminalHistory;
-		if (historyJson) {
-			terminalHistory = JSON.parse(historyJson);
-		}
-	});
 
 	function storeStateInHistory() {
 		const newState = {
@@ -40,25 +42,33 @@
 		replaceState('', newState);
 	}
 
+	/**
+    Does not consider the history element as a failure to update
+    the history
+    */
 	function tryRestoreScrollPosition() {
+		if (!terminalHistoryElement) return true;
 		if (!page.state.lastScrollPosition) return false;
 
-		terminalHistoryElement.scrollTo(
-			terminalHistoryElement.scrollLeft,
-			page.state.lastScrollPosition
-		);
-
-		const newState = {
-			...page.state,
-			lastScrollPosition: undefined
-		};
-		replaceState('', newState);
+		terminalHistoryElement.scrollTo({
+			top: page.state.lastScrollPosition,
+			behavior: 'smooth'
+		});
 
 		return true;
 	}
 
+	function tryRestoreHistory() {
+		const historyJson = page.state.terminalHistory;
+		if (historyJson) {
+			return JSON.parse(historyJson);
+		}
+		return [];
+	}
+
 	afterNavigate(() => {
 		disableScrollHandling();
+		tryRestoreHistory();
 	});
 
 	beforeNavigate(() => {
@@ -71,10 +81,6 @@
 		}
 	});
 
-	function clearTerminal() {
-		terminalHistory = [];
-	}
-
 	let scrolling = $state(false);
 	let onScroll = function () {
 		if (!terminalHistoryElement) return false;
@@ -83,22 +89,6 @@
 </script>
 
 <!-- <svelte:window onkeydown={checkShortcut} /> -->
-
-<!-- <div class="flex justify-center items-center flex-col outline-4 h-dvh gap-4">
-    <button 
-        class="{ effect && "animate-wiggle-enlarge" } bg-blue-200 rounded-lg p-4 hover:bg-blue-300 transition-colors shadow-md" 
-        onclick={ buttonClick }
-        onanimationend={() => effect = false}
-    >
-        Pressed the button <span class="font-bold">{counter}</span> times
-    </button>
-
-    <ol class="text-white list-decimal">
-    {#each idk as str }
-        <li>{str}</li>
-    {/each}
-    </ol>
-</div> -->
 
 <header>
 	<nav
@@ -111,10 +101,10 @@
 			<span class="h-min text-center">aasmart</span>
 		</h1>
 		<ul class="flex flex-row flex-wrap gap-2">
-			<NavButton command={'about'} bind:terminalHistory />
-			<NavButton command={'projects'} bind:terminalHistory />
-			<NavButton command={'experience'} bind:terminalHistory />
-			<NavButton command={'clear'} bind:terminalHistory />
+			<NavButton command={'about'} {addToHistory} />
+			<NavButton command={'projects'} {addToHistory} />
+			<NavButton command={'experience'} {addToHistory} />
+			<NavButton command={'clear'} {addToHistory} />
 		</ul>
 	</nav>
 </header>
@@ -124,6 +114,7 @@
 		<li class="my-2 px-4">
 			<Command
 				name={history}
+				updatedHistory={updatedTerminalHistory}
 				isLastCommand={index == terminalHistory.length - 1}
 				{tryRestoreScrollPosition}
 				{clearTerminal}

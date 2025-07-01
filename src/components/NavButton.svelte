@@ -1,15 +1,11 @@
 <script lang="ts">
-	let { command, terminalHistory = $bindable() }: { command: string; terminalHistory: string[] } =
+	let { command, addToHistory }: { command: string; addToHistory: (cmd: string) => void } =
 		$props();
-
-	function addToHistory() {
-		terminalHistory.push(command);
-	}
 </script>
 
 <button
 	class="transition-color whitespace-nowrap rounded-md border-2 border-blue-400 bg-transparent p-2 font-bold text-gray-900 duration-150 hover:bg-sky-400 dark:text-gray-50"
-	onclick={addToHistory}
+	onclick={() => addToHistory(command)}
 >
 	$ {command}
 </button>

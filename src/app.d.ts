@@ -6,7 +6,7 @@ declare global {
         // interface Locals {}
         // interface PageData {}
         interface PageState {
-            terminalHistory: string;
+            terminalHistory: string | undefined;
             lastScrollPosition: number | undefined;
         }
         // interface Platform {}

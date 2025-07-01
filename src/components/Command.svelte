@@ -8,11 +8,13 @@
 
 	let {
 		name,
+		updatedHistory,
 		isLastCommand,
 		tryRestoreScrollPosition,
 		clearTerminal
 	}: {
 		name: string;
+		updatedHistory: boolean;
 		isLastCommand: boolean;
 		tryRestoreScrollPosition: () => boolean;
 		clearTerminal: () => void;
@@ -28,13 +30,12 @@
 	};
 
 	let focusAction: Action = (node: HTMLElement) => {
-		if (node && isLastCommand) {
-			if (!tryRestoreScrollPosition()) {
-				node.scrollIntoView({
-					behavior: 'smooth',
-					block: 'start'
-				});
-			}
+		const didRestore = !updatedHistory && tryRestoreScrollPosition();
+		if (node && !didRestore && isLastCommand) {
+			node.scrollIntoView({
+				behavior: 'smooth',
+				block: 'start'
+			});
 		}
 	};
 </script>
