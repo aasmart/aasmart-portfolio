@@ -42,10 +42,10 @@
 	>
 		<a href="/projects/{project['url_name']}" class="flex size-full flex-col p-0">
 			<div
-				class="absolute right-0 m-1 aspect-square rounded-lg bg-gray-900/80 p-2"
+				class="absolute right-0 m-1 aspect-square rounded-lg border-[1px] border-neutral-950 bg-neutral-900/60 p-2 shadow-md"
 				title="Learn more!"
 			>
-				<i class="fa-solid fa-arrow-up-right-from-square m-0 aspect-square text-xl text-blue-400"
+				<i class="fa-solid fa-arrow-up-right-from-square m-0 aspect-square text-xl text-amber-400"
 				></i>
 			</div>
 
