@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { json } from '@sveltejs/kit';
+	import { base } from '$app/paths';
 
 	type Project = {
 		name: string;
@@ -40,7 +40,7 @@
 	<div
 		class="relative h-full overflow-clip rounded-md bg-gray-300 p-0 shadow-md duration-300 hover:shadow-blue-400 dark:bg-gray-600"
 	>
-		<a href="/projects/{project['url_name']}" class="flex size-full flex-col p-0">
+		<a href="{base}/projects/{project['url_name']}" class="flex size-full flex-col p-0">
 			<div
 				class="absolute right-0 m-1 aspect-square rounded-lg border-[1px] border-neutral-950 bg-neutral-900/60 p-2 shadow-md"
 				title="Learn more!"
