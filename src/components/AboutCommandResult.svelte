@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { getContext } from 'svelte';
 	import type { Action } from 'svelte/action';
 
-	let { focusCommand }: { focusCommand: () => void } = $props();
+	let focusCommand = getContext<() => void>('requestFocus');
 
 	let focus: Action = (_) => {
 		focusCommand();

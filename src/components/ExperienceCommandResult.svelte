@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { Action } from 'svelte/action';
 	import ExperienceItem from './ExperienceItem.svelte';
-
-	let { requestFocus }: { requestFocus: () => void } = $props();
+	import { getContext } from 'svelte';
 
 	let experiencePromise = fetch('/experiences/experiences.json')
 		.then((response) => response.json())
@@ -13,6 +12,8 @@
 			console.error('Error fetching experience data:', error);
 			return null;
 		});
+
+	let requestFocus = getContext<() => void>('requestFocus');
 
 	let focus: Action = (_) => {
 		requestFocus();

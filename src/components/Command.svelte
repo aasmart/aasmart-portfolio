@@ -1,26 +1,21 @@
 <script lang="ts">
 	import type { Action } from 'svelte/action';
-	import AboutCommandResult from './AboutCommandResult.svelte';
-	import ProjectCommandResult from './ProjectCommandResult.svelte';
-	import UnknownCommandResult from './UnknownCommandResult.svelte';
-	import ExperienceCommandResult from './ExperienceCommandResult.svelte';
-	import ClearTerminalCommandResut from './ClearTerminalCommandResut.svelte';
+	import { setContext, type Snippet } from 'svelte';
 
 	let {
 		name,
 		updatedHistory,
 		isLastCommand,
 		tryRestoreScrollPosition,
-		clearTerminal
+		children
 	}: {
 		name: string;
 		updatedHistory: boolean;
 		isLastCommand: boolean;
 		tryRestoreScrollPosition: () => boolean;
-		clearTerminal: () => void;
+		children: Snippet;
 	} = $props();
 	let commandName: HTMLParagraphElement;
-	let nameLower = $state(name.toLocaleLowerCase());
 
 	// I'm not sure how to correctly do this, but essentially this is duplicated
 	// because awaits happen late, but some elements need to focus when the command is
@@ -38,6 +33,8 @@
 			});
 		}
 	};
+
+	setContext('requestFocus', requestFocus);
 </script>
 
 <div bind:this={commandName} use:focusAction>
@@ -45,15 +42,5 @@
 		<span class="text-blue-400">❯</span>
 		{name}
 	</h2>
-	{#if nameLower == 'about'}
-		<AboutCommandResult focusCommand={requestFocus} />
-	{:else if nameLower == 'projects'}
-		<ProjectCommandResult focusCommand={requestFocus} />
-	{:else if nameLower == 'experience'}
-		<ExperienceCommandResult {requestFocus} />
-	{:else if nameLower == 'clear'}
-		<ClearTerminalCommandResut {clearTerminal} />
-	{:else}
-		<UnknownCommandResult {name} focusCommand={requestFocus} />
-	{/if}
+	{@render children?.()}
 </div>

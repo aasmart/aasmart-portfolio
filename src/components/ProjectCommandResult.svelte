@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { Action } from 'svelte/action';
 	import ProjectCard from './ProjectCard.svelte';
-
-	let { focusCommand }: { focusCommand: () => void } = $props();
+	import { getContext } from 'svelte';
 
 	let projectsPromise = fetch('/projects/project_cards.json').then((res) => res.json());
 
+	let focusCommand = getContext<() => void>('requestFocus');
 	let focus: Action = (_) => {
 		focusCommand();
 	};
