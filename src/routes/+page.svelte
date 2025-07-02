@@ -73,7 +73,7 @@
 		if (historyJson) {
 			return JSON.parse(historyJson);
 		}
-		return [];
+		return ['theme', 'about'];
 	}
 
 	afterNavigate(() => {
