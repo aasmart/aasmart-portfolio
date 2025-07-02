@@ -2,8 +2,9 @@
 	import type { Action } from 'svelte/action';
 	import ProjectCard from './ProjectCard.svelte';
 	import { getContext } from 'svelte';
+	import { base } from '$app/paths';
 
-	let projectsPromise = fetch('/projects/project_cards.json').then((res) => res.json());
+	let projectsPromise = fetch(`${base}/projects/project_cards.json`).then((res) => res.json());
 
 	let focusCommand = getContext<() => void>('requestFocus');
 	let focus: Action = (_) => {

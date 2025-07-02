@@ -2,8 +2,9 @@
 	import type { Action } from 'svelte/action';
 	import ExperienceItem from './ExperienceItem.svelte';
 	import { getContext } from 'svelte';
+	import { base } from '$app/paths';
 
-	let experiencePromise = fetch('/experiences/experiences.json')
+	let experiencePromise = fetch(`${base}/experiences/experiences.json`)
 		.then((response) => response.json())
 		.then((data) => {
 			return data;

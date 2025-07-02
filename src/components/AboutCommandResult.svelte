@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { getContext } from 'svelte';
 	import type { Action } from 'svelte/action';
 
@@ -15,12 +16,12 @@
 >
 	<img
 		class="aspect-square max-h-[18em] rounded-full shadow-lg sm:w-auto"
-		src={'/me.png'}
+		src={`${base}/me.png`}
 		alt="Me"
 	/>
 	<div class="flex h-auto flex-col dark:text-gray-50">
 		<h2 class="text-center text-xl font-bold lg:text-start">Alexander Smart</h2>
-		<h3 class="text-center text-lg lg:text-start dark:text-gray-100">Student and Developer</h3>
+		<h3 class="text-center text-lg dark:text-gray-100 lg:text-start">Student and Developer</h3>
 		<hr class="border-1 my-1 rounded-full" />
 		<p class="h-max w-full text-center lg:text-start">
 			Hi! <span>👋</span> I'm currently an undergraduate student at the University of Michigan

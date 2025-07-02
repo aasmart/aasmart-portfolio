@@ -50,7 +50,7 @@
 			</div>
 
 			<div class="h-20 w-full grow p-0">
-				<img class="h-full w-full overflow-hidden" src="/{project['img_name']}" alt="t" />
+				<img class="h-full w-full overflow-hidden" src="{base}/{project['img_name']}" alt="t" />
 			</div>
 
 			<div class="flex flex-col items-center gap-1 bg-gray-100 p-1 text-xl dark:bg-[#292929]">

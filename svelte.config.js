@@ -14,6 +14,9 @@ const config = {
     adapter: adapter(),
     paths: {
       base: process.env.NODE_ENV === 'production' ? '/aasmart-portfolio' : '',
+    },
+    prerender: {
+      entries: [`/projects/[slug]`, "/"]
     }
   }
 };
