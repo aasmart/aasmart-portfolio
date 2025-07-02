@@ -1,0 +1,30 @@
+{
+    "experiences": [
+        {
+            "name": "Future of Programming Lab",
+            "title": "Language Developer",
+            "description": "Extending the language with novel new features",
+            "start_date": "05-01-2025",
+            "skills": [
+                "ReasonML",
+                "Ocaml"
+            ]
+        },
+        {
+            "name": "EECS281 (DS&A) @ UofM",
+            "title": "Instructional Aide (TA)",
+            "description": "Improving both student's understanding of complex topics, \nas well as the course by renovating aging lecture materials",
+            "start_date": "08-01-2024",
+            "skills": [
+                "Teaching"
+            ]
+        },
+        {
+            "name": "WIP",
+            "title": "Experiences work in progress...",
+            "description": "Things take time to do well :)",
+            "start_date": "08-01-2024",
+            "skills": []
+        }
+    ]
+}
