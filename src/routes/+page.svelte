@@ -79,6 +79,7 @@
 	afterNavigate(() => {
 		disableScrollHandling();
 		tryRestoreHistory();
+		setTheme(getTheme());
 	});
 
 	beforeNavigate(() => {
