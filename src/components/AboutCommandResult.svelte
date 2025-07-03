@@ -22,7 +22,7 @@
 	<div class="flex h-auto flex-col dark:text-gray-50">
 		<h2 class="text-center text-xl font-bold lg:text-start">Alexander Smart</h2>
 		<h3 class="text-center text-lg dark:text-gray-100 lg:text-start">Student and Developer</h3>
-		<hr class="border-1 my-1 rounded-full" />
+		<hr class="border-1 my-1 w-full rounded-full" />
 		<p class="h-max w-full text-center lg:text-start">
 			Hi! <span>👋</span> I'm currently an undergraduate student at the University of Michigan
 			&mdash; Ann Arbor. I'm pretty interested in most things computer science, but I've discovered
@@ -33,7 +33,7 @@
 			I invite you to have a look around with either the nav buttons, or with the actual command line.
 		</p>
 		<ul
-			class="mt-auto flex flex-row items-center justify-center gap-3 pt-2 text-4xl lg:justify-start"
+			class="mt-auto flex flex-row flex-wrap items-center justify-center gap-3 pt-2 text-4xl lg:justify-start"
 		>
 			<li>
 				<a
@@ -53,7 +53,9 @@
 					<i class="fa-brands fa-linkedin"></i>
 				</a>
 			</li>
-			<li class="h-full align-text-bottom text-lg text-blue-400">aasmart[at]umich[dot].edu</li>
+			<li class="h-full break-all text-center align-text-bottom text-lg text-blue-400">
+				aasmart[at]umich[dot].edu
+			</li>
 		</ul>
 	</div>
 </section>
