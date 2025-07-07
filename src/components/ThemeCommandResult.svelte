@@ -37,10 +37,16 @@
 			aria-label="Toggle theme"
 		>
 			<span
-				class="inline-block aspect-square h-8 w-8 rounded-full bg-amber-400 shadow-[0_0_2px_2px] shadow-amber-400 transition-all group-hover:bg-blue-200 group-hover:shadow-blue-200 dark:bg-blue-200 dark:shadow-blue-200 dark:group-hover:bg-amber-400 dark:group-hover:shadow-amber-400"
+				class="inline-block aspect-square h-8 w-8 rounded-full bg-amber-400 shadow-[0_0_2px_2px]
+					shadow-amber-400 transition-all group-hover:bg-blue-200 group-hover:shadow-blue-200
+					dark:bg-blue-200 dark:shadow-blue-200 dark:group-hover:bg-amber-400
+					dark:group-hover:shadow-amber-400"
 			></span>
 			<span
-				class="absolute -right-7 -top-3 aspect-square h-8 w-8 rounded-full bg-light-bg shadow-[0_0_2px_2px] shadow-light-bg/30 transition-[top,right] group-hover:-right-[2px] group-hover:top-[3px] dark:-right-[2px] dark:top-[3px] dark:bg-gray-bg dark:shadow-gray-bg/30 dark:group-hover:-right-7 dark:group-hover:-top-3"
+				class="absolute -right-7 -top-3 aspect-square h-8 w-8 rounded-full bg-light-bg
+					shadow-[0_0_2px_2px] shadow-light-bg/30 transition-[top,right] group-hover:-right-[2px]
+					group-hover:top-[3px] dark:-right-[2px] dark:top-[3px] dark:bg-gray-bg
+					dark:shadow-gray-bg/30 dark:group-hover:-right-7 dark:group-hover:-top-3"
 			></span>
 		</button>
 	</h2>

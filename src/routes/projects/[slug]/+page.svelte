@@ -1,46 +1,115 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import type { PageProps } from './$types';
 	import SvelteMarkdown from '@humanspeak/svelte-markdown';
 	import { error } from '@sveltejs/kit';
 	import { base } from '$app/paths';
+	import classNames from 'classnames';
+
+	let allProjectUrls = $state<string[]>([]);
 
 	let { data }: PageProps = $props();
 	let markdown: Promise<string> | undefined = $state();
-	onMount(() => {
-		markdown = fetch(`${base}/projects/${data.markdownFile}.md`)
+	let projectDir = $state(`${base}/projects`);
+	let projectUrl = $derived(`${projectDir}/${data.markdownFile}.md`);
+	$effect(() => {
+		markdown = fetch(projectUrl)
 			.then((res) => res.text())
 			.catch(() => error(404, 'Not found'));
+
+		fetch(`${base}/projects/project_cards.json`)
+			.then((res) => res.json())
+			.then((json) => {
+				allProjectUrls = json['projects'].map((p: any) => p.url_name);
+			});
 	});
+
+	let menuExpanded = $state<boolean>(false);
+	let toggleMenuExpanded = () => {
+		menuExpanded = !menuExpanded;
+	};
+
 </script>
 
-<main class="flex w-full flex-row justify-center p-4 dark:text-gray-50">
+<!-- TODO: general theming improvements -->
+
+<main class="flex h-full w-full flex-col dark:text-gray-300 md:flex-row">
 	<style>
 		h1 {
 			font-size: 2rem;
 		}
 
-		pre {
-			padding: 8px 0;
-		}
-
 		.hljs,
 		code {
-			background: #222222;
 			border-radius: 8px;
-			padding: 4px;
+			box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.4);
+			margin: 8px 0 !important;
 		}
 	</style>
 
-	<div class="w-2/3 rounded-lg p-4 shadow-lg dark:bg-zinc-700">
-		{#await markdown}
-			<p>Loading content</p>
-		{:then source}
+	<nav
+		class="min-w-min overflow-y-auto border-b-4 px-0 py-2 shadow-sm dark:border-neutral-900 md:w-[20rem] md:border-b-0 md:border-r-4 md:px-4"
+	>
+		<!-- TODO: need to extract all of this into components in the future -->
+        <!-- TODO: expanded save states between screen size changes -->
+        <!-- TODO: bug: has animation when going from expanded to unexpended on window size change-->
+        <div class="md:px-0 px-4 flex-row flex justify-between">
+            <h2 class="text-xl font-bold text-blue-400 md:px-0"><a href="{base}/">aasmart-tree</a></h2>
+            <button class="flex flex-col justify-center gap-2 md:hidden aspect-square w-8" onclick={toggleMenuExpanded} aria-label={menuExpanded ? "Close menu" : "Open menu"}>
+                <span class={classNames("transition-all inline-block left-0 w-full h-[3px] bg-gray-900 dark:bg-slate-200 rounded-lg origin-right", {"-rotate-45": menuExpanded})}></span>
+                <span class={classNames("inline-block left-0 w-full h-[3px] bg-gray-900 dark:bg-slate-200 rounded-lg transition-opacity", { "opacity-0": menuExpanded})}></span>
+                <span class={classNames("transition-all inline-block left-0 w-full h-[3px] bg-gray-900 dark:bg-slate-200 rounded-lg origin-right", {"rotate-45": menuExpanded})}></span>
+            </button>
+        </div>
+		<ul
+            class={classNames(
+                { "rect-clip-full border-b-4 shadow-md dark:border-neutral-900": menuExpanded},
+                { "rect-clip-y-0 md:rect-clip-full": !menuExpanded},
+                "md:max-h-full md:static md:block md:border-b-0 md:px-0 md:shadow-none md:transition-none",
+                "shadow-md overflow-scroll max-h-2/3 absolute z-30 w-full bg-light-bg px-4 pb-2 text-lg transition-[clip-path] duration-150 dark:bg-gray-bg dark:text-gray-200 text-gray-900"
+            )}
+		>
+			<li>
+				<h3 class="text-blue-400">
+					<i class="fa-solid fa-folder-open"></i>
+					home
+				</h3>
+				<ul class="w-full border-l-4 border-gray-300 dark:border-neutral-600 pl-6">
+					<li class="w-max rounded-md px-1 text-amber-500 dark:text-amber-400">
+						<a href="{base}/">
+							<i class="fa-solid fa-home"></i>
+							<span class="underline">home.sh</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<h3 class="text-blue-400">
+					<i class="fa-solid fa-folder-open"></i>
+					projects
+				</h3>
+				<ul class="w-full border-l-4 border-gray-300 dark:border-neutral-600 pl-6">
+					{#each allProjectUrls as url, i}
+						<li class="opacity-0 w-max rounded-md px-1 animate-move-up-fade-in {data.markdownFile == url ? 'bg-neutral-200 dark:bg-neutral-700' : ''}"
+                            style="animation-delay: {50 * i}ms;">
+							<a href="{projectDir}/{url}">
+								<i class="fa-solid fa-file"></i>
+								<span class="underline">{url}.md</span>
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<div class="flex w-full flex-col gap-1 overflow-y-auto px-6 md:w-[100ch] text-gray-900 dark:text-gray-50">
+		{#await markdown then source}
 			{#if source}
-				<SvelteMarkdown {source} />
-				<script>
-					hljs.highlightAll();
-				</script>
+				<div class="animate-move-up-fade-in">
+					<SvelteMarkdown {source} />
+					<script>
+						hljs.highlightAll();
+					</script>
+				</div>
 			{/if}
 		{/await}
 	</div>

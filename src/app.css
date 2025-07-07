@@ -1,3 +1,13 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer utilities {
+	.rect-clip-full {
+		clip-path: rect(0 100% 100% 0);
+	}
+
+	.rect-clip-y-0 {
+		clip-path: rect(0 100% 0 0);
+	}
+}

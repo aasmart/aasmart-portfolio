@@ -11,4 +11,3 @@
 </script>
 
 <p use:focus class="dark:text-gray-50">Unrecognized command '{name}'</p>
-

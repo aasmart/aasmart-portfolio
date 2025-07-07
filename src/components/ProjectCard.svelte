@@ -33,16 +33,17 @@
 
 <div
 	bind:this={element}
-	class="hover:border-3 h-64 {isInView
-		? 'animate-grow-fade-in'
-		: ''} rounded-md border-2 border-blue-400 p-2 opacity-0 duration-300 hover:scale-105 hover:p-0"
+	class="hover:border-3 h-64 {isInView ? 'animate-grow-fade-in' : ''} rounded-md border-2
+		border-blue-400 p-2 opacity-0 duration-300 hover:scale-105 hover:p-0"
 >
 	<div
-		class="relative h-full overflow-clip rounded-md bg-gray-300 p-0 shadow-md duration-300 hover:shadow-blue-400 dark:bg-gray-600"
+		class="relative h-full overflow-clip rounded-md bg-gray-300 p-0 shadow-md duration-300
+			hover:shadow-blue-400 dark:bg-gray-600"
 	>
 		<a href="{base}/projects/{project['url_name']}" class="flex size-full flex-col p-0">
 			<div
-				class="absolute right-0 m-1 aspect-square rounded-lg border-[1px] border-neutral-950 bg-neutral-900/60 p-2 shadow-md"
+				class="absolute right-0 m-1 aspect-square rounded-lg border-[1px] border-neutral-950
+					bg-neutral-900/60 p-2 shadow-md"
 				title="Learn more!"
 			>
 				<i class="fa-solid fa-arrow-up-right-from-square m-0 aspect-square text-xl text-amber-400"

@@ -12,7 +12,8 @@
 
 <section
 	use:focus
-	class="flex max-w-[100rem] animate-grow-fade-in flex-col items-center gap-4 rounded-md border-2 border-blue-400 p-2 sm:w-3/4 lg:flex-row"
+	class="flex max-w-[100rem] animate-grow-fade-in flex-col items-center gap-4 rounded-md border-2
+		border-blue-400 p-2 sm:w-3/4 lg:flex-row"
 >
 	<img
 		class="aspect-square max-h-[18em] rounded-full shadow-lg sm:w-auto"
@@ -33,11 +34,13 @@
 			I invite you to have a look around with either the nav buttons, or with the actual command line.
 		</p>
 		<ul
-			class="mt-auto flex flex-row flex-wrap items-center justify-center gap-3 pt-2 text-4xl lg:justify-start"
+			class="mt-auto flex flex-row flex-wrap items-center justify-center gap-3 pt-2 text-4xl
+				lg:justify-start"
 		>
 			<li>
 				<a
-					class="text-blue-400 transition-colors duration-200 hover:text-blue-500 focus:text-blue-500"
+					class="text-blue-400 transition-colors duration-200 hover:text-blue-500
+						focus:text-blue-500"
 					href="https://github.com/aasmart"
 					aria-label="LinkedIn"
 				>
@@ -46,7 +49,8 @@
 			</li>
 			<li>
 				<a
-					class="text-blue-400 transition-colors duration-200 hover:text-blue-500 focus:text-blue-500"
+					class="text-blue-400 transition-colors duration-200 hover:text-blue-500
+						focus:text-blue-500"
 					href="https://linkedin.com/in/aasmart"
 					aria-label="Github"
 				>

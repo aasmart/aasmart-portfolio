@@ -1,6 +1,4 @@
-<div class="rotate-45 border-t-4 border-r-4 aspect-square h-2/5 rounded-tr-sm">
-</div>
+<div class="aspect-square h-2/5 rotate-45 rounded-tr-sm border-r-4 border-t-4"></div>
 
 <style>
-    
 </style>
