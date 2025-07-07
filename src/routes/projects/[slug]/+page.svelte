@@ -43,7 +43,23 @@
 	<style>
 		h1 {
 			font-size: 2rem;
+            font-weight: bold;
 		}
+
+        h2 {
+            font-size: 1.5rem; 
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        p {
+            line-height: 1.7rem;
+            padding: 0 0 14px 0;
+        }
 
 		.hljs,
 		code {
@@ -108,7 +124,7 @@
 			</li>
 		</ul>
 	</nav>
-	<div class="flex w-full flex-col gap-1 overflow-y-auto px-6 md:w-[100ch] text-gray-900 dark:text-gray-50">
+	<div class="flex w-full flex-col gap-1 overflow-y-auto px-6 md:w-[100ch] text-gray-900 dark:text-gray-200">
 		{#await markdown then source}
 			{#if source}
 				<div class="animate-move-up-fade-in">
