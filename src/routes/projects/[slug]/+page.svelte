@@ -4,6 +4,8 @@
 	import { error } from '@sveltejs/kit';
 	import { base } from '$app/paths';
 	import classNames from 'classnames';
+	import { beforeNavigate } from '$app/navigation';
+	import { page } from '$app/state';
 
 	let allProjectUrls = $state<string[]>([]);
 
@@ -27,6 +29,11 @@
 	let toggleMenuExpanded = () => {
 		menuExpanded = !menuExpanded;
 	};
+
+    beforeNavigate(() => {
+		const historyJson = page.state.terminalHistory;
+        console.log(historyJson);
+    })
 
 </script>
 

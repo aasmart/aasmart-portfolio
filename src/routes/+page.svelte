@@ -20,6 +20,8 @@
 	import ThemeCommandResult from '../components/ThemeCommandResult.svelte';
 	import UnknownCommandResult from '../components/UnknownCommandResult.svelte';
 	import { onMount } from 'svelte';
+	import { homeScrollTop, terminalCommandHistory } from '$lib/store';
+	import { get } from 'svelte/store';
 
 	let terminalHistory: string[] = $state(tryRestoreHistory());
 	let terminalInput = $state('');
@@ -45,11 +47,8 @@
 	}
 
 	function storeStateInHistory() {
-		const newState = {
-			lastScrollPosition: terminalHistoryElement.scrollTop,
-			terminalHistory: JSON.stringify(terminalHistory)
-		};
-		replaceState('', newState);
+        terminalCommandHistory.set(terminalHistory);
+        homeScrollTop.set(terminalHistoryElement.scrollTop);
 	}
 
 	/**
@@ -58,10 +57,10 @@
     */
 	function tryRestoreScrollPosition() {
 		if (!terminalHistoryElement) return true;
-		if (!page.state.lastScrollPosition) return false;
+		if (!get(homeScrollTop)) return false;
 
 		terminalHistoryElement.scrollTo({
-			top: page.state.lastScrollPosition,
+			top: get(homeScrollTop),
 			behavior: 'smooth'
 		});
 
@@ -69,9 +68,9 @@
 	}
 
 	function tryRestoreHistory() {
-		const historyJson = page.state.terminalHistory;
+		const historyJson = get(terminalCommandHistory);
 		if (historyJson) {
-			return JSON.parse(historyJson);
+			return historyJson;
 		}
 		return ['theme', 'about'];
 	}
