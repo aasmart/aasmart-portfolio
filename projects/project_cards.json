@@ -1,25 +1,16 @@
 {
-    "projects": [
-        {
-            "name": "Portfolio Website",
-            "url_name": "portfolio_website",
-            "technologies": [
-                "svelte",
-                "typescript",
-                "tailwindcss",
-                "html5",
-                "css3",
-                "figma"
-            ],
-            "img_name": "portfolio.png"
-        },
-        {
-            "name": "More projects coming soon...",
-            "url_name": "wip",
-            "technologies": [
-                "cplusplus"
-            ],
-            "img_name": "portfolio.png"
-        }
-    ]
+	"projects": [
+		{
+			"name": "Portfolio Website",
+			"url_name": "portfolio_website",
+			"technologies": ["svelte", "typescript", "tailwindcss", "html5", "css3", "figma"],
+			"img_name": "portfolio.png"
+		},
+		{
+			"name": "More projects coming soon...",
+			"url_name": "wip",
+			"technologies": ["cplusplus"],
+			"img_name": "portfolio.png"
+		}
+	]
 }
