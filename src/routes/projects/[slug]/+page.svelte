@@ -1,27 +1,13 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
 	import SvelteMarkdown from '@humanspeak/svelte-markdown';
-	import { error } from '@sveltejs/kit';
 	import { base } from '$app/paths';
 	import classNames from 'classnames';
 	import { beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 
 	let { data }: PageProps = $props();
-	let markdown: Promise<string> | undefined = $state();
 	let projectDir = $state(`${base}/projects`);
-	let projectUrl = $derived(`${projectDir}/${data.markdownFile}.md`);
-	$effect(() => {
-		markdown = fetch(projectUrl)
-			.then((res) => res.text())
-			.catch(() => error(404, 'Not found'));
-
-		fetch(`${base}/projects/project_cards.json`)
-			.then((res) => res.json())
-			.then((json) => {
-				allProjectUrls = json.map((p: any) => p.id);
-			});
-	});
 	let allProjectUrls = $derived<String[]>(Array.from(data.projects.keys()));
 
 	let projectData = $derived(data.projects.get(data.markdownFile));
@@ -151,29 +137,27 @@
 	<div
 		class="flex w-full flex-col gap-1 overflow-y-auto px-6 text-gray-900 dark:text-gray-200 md:w-[110ch]"
 	>
-		{#await markdown then source}
-			{#if source}
-				<div class="animate-move-up-fade-in">
-					<header class="text-blue-400">
-						{#if projectData?.github_url}
-							<a href={projectData.github_url}>
-								<h1>
-									{projectData?.name}
-									<i class="fa-brands fa-github"></i>
-								</h1>
-							</a>
-						{:else}
+		{#key projectData}
+			<div class="animate-move-up-fade-in">
+				<header class="text-blue-400 transition-colors hover:text-blue-500">
+					{#if projectData?.github_url}
+						<a href={projectData.github_url}>
 							<h1>
 								{projectData?.name}
+								<i class="fa-brands fa-github"></i>
 							</h1>
-						{/if}
-					</header>
-					<SvelteMarkdown {source} />
-					<script>
-						hljs.highlightAll();
-					</script>
-				</div>
-			{/if}
-		{/await}
+						</a>
+					{:else}
+						<h1>
+							{projectData?.name}
+						</h1>
+					{/if}
+				</header>
+				<SvelteMarkdown source={data.markdown} />
+				<script>
+					hljs.highlightAll();
+				</script>
+			</div>
+		{/key}
 	</div>
 </main>
