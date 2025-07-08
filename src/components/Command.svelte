@@ -25,6 +25,9 @@
 	};
 
 	let focusAction: Action = (node: HTMLElement) => {
+		// Try scroll is here due to await elements. These have
+		// been removed, but this here in the future if similar
+		// behavior is still necessary
 		const didRestore = !updatedHistory && tryRestoreScrollPosition();
 		if (node && !didRestore && isLastCommand) {
 			node.scrollIntoView({

@@ -19,7 +19,6 @@
 
 	beforeNavigate(() => {
 		const historyJson = page.state.terminalHistory;
-		console.log(historyJson);
 	});
 </script>
 

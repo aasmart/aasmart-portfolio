@@ -14,6 +14,7 @@
 	import { getContext } from 'svelte';
 	import type { Theme } from './+layout.svelte';
 	import type { PageProps } from './projects/[slug]/$types';
+	import type { Action } from 'svelte/action';
 
 	let { data }: PageProps = $props();
 
@@ -52,17 +53,21 @@
     Does not consider the history element as a failure to update
     the history
     */
-	function tryRestoreScrollPosition() {
-		if (!terminalHistoryElement) return true;
+	function tryRestoreScrollPosition(elt: HTMLElement | undefined) {
+		if (!elt) return true;
 		if (!get(homeScrollTop)) return false;
 
-		terminalHistoryElement.scrollTo({
+		elt.scrollTo({
 			top: get(homeScrollTop),
 			behavior: 'smooth'
 		});
 
 		return true;
 	}
+
+	let tryRestoreScrollPosAction: Action = (elt: HTMLElement) => {
+		tryRestoreScrollPosition(elt);
+	};
 
 	function tryRestoreHistory() {
 		const historyJson = get(terminalCommandHistory);
@@ -74,7 +79,6 @@
 
 	afterNavigate(() => {
 		disableScrollHandling();
-		tryRestoreHistory();
 	});
 
 	beforeNavigate(() => {
@@ -117,14 +121,19 @@
 	</nav>
 </header>
 
-<ul bind:this={terminalHistoryElement} class="h-full overflow-y-scroll" onscroll={onScroll}>
+<ul
+	bind:this={terminalHistoryElement}
+	use:tryRestoreScrollPosAction
+	class="h-full overflow-y-scroll"
+	onscroll={onScroll}
+>
 	{#each terminalHistory as name, index}
 		<li class="my-2 px-4">
 			<Command
 				{name}
 				updatedHistory={updatedTerminalHistory}
 				isLastCommand={index == terminalHistory.length - 1}
-				{tryRestoreScrollPosition}
+				tryRestoreScrollPosition={() => tryRestoreScrollPosition(terminalHistoryElement)}
 			>
 				{#if name == 'about'}
 					<AboutCommandResult />
