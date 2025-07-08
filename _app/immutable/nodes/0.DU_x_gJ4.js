@@ -1,0 +1,1 @@
+import"../chunks/Bg9kRutz.js";import{B as a,f as n,C as s,b as l}from"../chunks/BIRDGi6R.js";const i=!0,p="always",u=Object.freeze(Object.defineProperty({__proto__:null,prerender:i,trailingSlash:p},Symbol.toStringTag,{value:"Module"}));function d(t,o){var e=a(),r=n(e);s(r,()=>o.children),l(t,e)}export{d as component,u as universal};
