@@ -1,5 +1,3 @@
-# My Corner of the Internet
-
 ## Welcome
 
 Welcome to my website, and I hope you've liked what you've seen so far.

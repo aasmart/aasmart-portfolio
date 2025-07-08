@@ -1,7 +1,7 @@
 [
     {
-        "id": "portfolio_website",
-        "name": "Portfolio Website",
+        "id": "personal_website",
+        "name": "Personal Website",
         "technologies": [
             "svelte",
             "typescript",
@@ -10,7 +10,8 @@
             "css3",
             "figma"
         ],
-        "img_name": "portfolio.png"
+        "img_name": "portfolio.png",
+        "github_url": "https://github.com/aasmart/aasmart-portfolio"
     },
     {
         "id": "wip",
