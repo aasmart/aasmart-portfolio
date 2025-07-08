@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
 	import type { Action } from 'svelte/action';
-	import type { Theme } from '../routes/+page.svelte';
+	import type { Theme } from '../routes/+layout.svelte';
 
 	let { theme, setTheme }: { theme: Theme; setTheme: (theme: Theme) => void } = $props();
 

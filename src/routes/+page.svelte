@@ -1,15 +1,5 @@
-<script module lang="ts">
-	export type Theme = 'light' | 'dark';
-</script>
-
 <script lang="ts">
-	import {
-		afterNavigate,
-		beforeNavigate,
-		disableScrollHandling,
-		replaceState
-	} from '$app/navigation';
-	import { page } from '$app/state';
+	import { afterNavigate, beforeNavigate, disableScrollHandling } from '$app/navigation';
 	import Command from '../components/Command.svelte';
 	import CommandInput from '../components/CommandInput.svelte';
 	import NavButton from '../components/NavButton.svelte';
@@ -19,9 +9,10 @@
 	import ClearTerminalCommandResut from '../components/ClearTerminalCommandResut.svelte';
 	import ThemeCommandResult from '../components/ThemeCommandResult.svelte';
 	import UnknownCommandResult from '../components/UnknownCommandResult.svelte';
-	import { onMount } from 'svelte';
 	import { homeScrollTop, terminalCommandHistory } from '$lib/store';
 	import { get } from 'svelte/store';
+	import { getContext } from 'svelte';
+	import type { Theme } from './+layout.svelte';
 
 	let terminalHistory: string[] = $state(tryRestoreHistory());
 	let terminalInput = $state('');
@@ -47,8 +38,8 @@
 	}
 
 	function storeStateInHistory() {
-        terminalCommandHistory.set(terminalHistory);
-        homeScrollTop.set(terminalHistoryElement.scrollTop);
+		terminalCommandHistory.set(terminalHistory);
+		homeScrollTop.set(terminalHistoryElement.scrollTop);
 	}
 
 	/**
@@ -78,7 +69,6 @@
 	afterNavigate(() => {
 		disableScrollHandling();
 		tryRestoreHistory();
-		setTheme(getTheme());
 	});
 
 	beforeNavigate(() => {
@@ -97,49 +87,15 @@
 		scrolling = terminalHistoryElement.scrollTop > 0;
 	};
 
-	// theme handling
-	// ========================
-	let theme = $state<Theme>('light');
-	function getTheme(): Theme {
-		if ('theme' in window.localStorage) {
-			const theme = window.localStorage.getItem('theme');
-			if (theme) {
-				return theme as Theme;
-			}
-		}
-		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			return 'dark';
-		}
-		return 'light';
-	}
-
-	function setTheme(newTheme: Theme) {
-		theme = newTheme;
-	}
-
-	onMount(() => {
-		setTheme(getTheme());
-	});
-
-	$effect(() => {
-		if (theme === 'light') {
-			document.documentElement.classList.add('light');
-			document.documentElement.classList.remove('dark');
-		} else {
-			document.documentElement.classList.add('dark');
-			document.documentElement.classList.remove('light');
-		}
-		window.localStorage.setItem('theme', theme);
-	});
+	const getTheme: () => Theme = getContext('getTheme');
 </script>
 
 <!-- <svelte:window onkeydown={checkShortcut} /> -->
 
 <header class="bg-light-bg dark:bg-gray-bg">
 	<nav
-		class="sticky px-4 {scrolling
-			? 'border-b-2 shadow-md'
-			: ''} m-0 border-neutral-50 py-2 transition-shadow duration-300 dark:border-neutral-900"
+		class="sticky px-4 {scrolling ? 'border-b-2 shadow-md' : ''} m-0 border-neutral-50 py-2
+			transition-shadow duration-300 dark:border-neutral-900"
 	>
 		<h1 class="flex h-12 flex-row items-center gap-2 text-4xl text-gray-900 dark:text-gray-50">
 			<span class="h-min text-center text-blue-400">❯</span>
@@ -173,7 +129,7 @@
 				{:else if name == 'clear'}
 					<ClearTerminalCommandResut {clearTerminal} />
 				{:else if name == 'theme'}
-					<ThemeCommandResult {theme} {setTheme} />
+					<ThemeCommandResult theme={getTheme()} setTheme={getContext('setTheme')} />
 				{:else}
 					<UnknownCommandResult {name} />
 				{/if}

@@ -4,7 +4,9 @@ import { readdirSync } from 'fs'
 
 // make it so project routes work
 const files = readdirSync('static/projects/');
-let file_routes = files.filter(f => f.endsWith("md")).map(f => `/projects/${f.slice(0, -3)}/`);
+let file_routes = files
+  .filter(f => f.endsWith("md"))
+  .map(f => `/projects/${f.slice(0, -3)}/`);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
