@@ -70,7 +70,7 @@
 	</style>
 
 	<nav
-		class="min-w-min overflow-y-auto border-b-4 px-0 py-2 shadow-sm dark:border-neutral-900 md:w-[20rem] md:border-b-0 md:border-r-4 md:px-4"
+		class="min-w-min border-b-4 px-0 md:overflow-y-scroll overflow-y-visible py-2 shadow-sm dark:border-neutral-900 md:w-[20rem] md:border-b-0 md:border-r-4 md:px-4"
 	>
 		<!-- TODO: need to extract all of this into components in the future -->
         <!-- TODO: expanded save states between screen size changes -->
@@ -87,8 +87,8 @@
             class={classNames(
                 { "rect-clip-full border-b-4 shadow-md dark:border-neutral-900": menuExpanded},
                 { "rect-clip-y-0 md:rect-clip-full": !menuExpanded},
-                "md:max-h-full md:static md:block md:border-b-0 md:px-0 md:shadow-none md:transition-none",
-                "shadow-md overflow-scroll max-h-2/3 absolute z-30 w-full bg-light-bg px-4 pb-2 text-lg transition-[clip-path] duration-150 dark:bg-gray-bg dark:text-gray-200 text-gray-900"
+                "md:static md:block md:border-b-0 md:px-0 md:shadow-none md:transition-none md:overflow-visible ",
+                "shadow-md overflow-scroll max-h-2/3 h-min absolute z-30 w-full bg-light-bg px-4 pb-2 text-lg transition-[clip-path] duration-150 dark:bg-gray-bg dark:text-gray-200 text-gray-900"
             )}
 		>
 			<li>

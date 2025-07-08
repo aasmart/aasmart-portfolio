@@ -28,7 +28,7 @@ with these websites. I still do, but to a lesser extent.
 However, the core theme was still central to what I wanted to do, so I wanted
 to iron that out first. As alluded to, this took me a while to come up with.
 I wanted something that was different from what I've seen before, but
-was still usable as a website for the general public. (a pure
+was still usable as a website for the general public (a pure
 terminal was out of the question 😅). I played around with a few ideas that,
 in theory, would involved over-the-top visuals to put everything together.
 Yet, none of them fully resonated with me.
@@ -42,6 +42,6 @@ commands in the navigation bar, as well as having a real command input. I
 quickly sketched some stuff out, and it felt like everything went together
 nicely. So, I had my website... which I credit to just a few buttons.
 
-## More coming soon...
+## More coming soon
 
 I'm a busy person lol.
