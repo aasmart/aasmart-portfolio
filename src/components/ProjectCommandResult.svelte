@@ -2,9 +2,11 @@
 	import type { Action } from 'svelte/action';
 	import ProjectCard from './ProjectCard.svelte';
 	import { getContext } from 'svelte';
-	import { base } from '$app/paths';
+	import type { Project } from '../routes/+layout.server';
 
-	let projectsPromise = fetch(`${base}/projects/project_cards.json`).then((res) => res.json());
+	const { projects }: { projects: Map<String, Project> } = $props();
+
+	let projectValues = $derived(projects.values());
 
 	let focusCommand = getContext<() => void>('requestFocus');
 	let focus: Action = (_) => {
@@ -12,18 +14,14 @@
 	};
 </script>
 
-{#await projectsPromise}
-	<p class="text-gray-900 dark:text-gray-50">Loading...</p>
-{:then projects}
-	<section use:focus class="w-full">
-		<p class="my-3 text-xl text-gray-900 dark:text-gray-50">
-			Found <span class="font-bold text-blue-400">{projects['projects'].length}</span> projects...
-		</p>
+<section use:focus class="w-full">
+	<p class="my-3 text-xl text-gray-900 dark:text-gray-50">
+		Found <span class="font-bold text-blue-400">{projects.size}</span> projects...
+	</p>
 
-		<div class="grid grid-cols-1 gap-6 sm:grid-cols-[repeat(auto-fill,clamp(18em,23%,24.5em))]">
-			{#each projects['projects'] as project, index}
-				<ProjectCard {project} key={index} />
-			{/each}
-		</div>
-	</section>
-{/await}
+	<div class="grid grid-cols-1 gap-6 sm:grid-cols-[repeat(auto-fill,clamp(18em,23%,24.5em))]">
+		{#each projectValues as project, index}
+			<ProjectCard {project} key={index} />
+		{/each}
+	</div>
+</section>

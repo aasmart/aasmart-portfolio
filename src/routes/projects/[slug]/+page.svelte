@@ -7,8 +7,6 @@
 	import { beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 
-	let allProjectUrls = $state<string[]>([]);
-
 	let { data }: PageProps = $props();
 	let markdown: Promise<string> | undefined = $state();
 	let projectDir = $state(`${base}/projects`);
@@ -21,20 +19,20 @@
 		fetch(`${base}/projects/project_cards.json`)
 			.then((res) => res.json())
 			.then((json) => {
-				allProjectUrls = json['projects'].map((p: any) => p.url_name);
+				allProjectUrls = json.map((p: any) => p.id);
 			});
 	});
+	let allProjectUrls = $derived<String[]>(Array.from(data.projects.keys()));
 
 	let menuExpanded = $state<boolean>(false);
 	let toggleMenuExpanded = () => {
 		menuExpanded = !menuExpanded;
 	};
 
-    beforeNavigate(() => {
+	beforeNavigate(() => {
 		const historyJson = page.state.terminalHistory;
-        console.log(historyJson);
-    })
-
+		console.log(historyJson);
+	});
 </script>
 
 <!-- TODO: general theming improvements -->
@@ -43,23 +41,23 @@
 	<style>
 		h1 {
 			font-size: 2rem;
-            font-weight: bold;
+			font-weight: bold;
 		}
 
-        h2 {
-            font-size: 1.5rem; 
-            font-weight: bold;
-        }
+		h2 {
+			font-size: 1.5rem;
+			font-weight: bold;
+		}
 
-        h3 {
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
+		h3 {
+			font-size: 1.2rem;
+			font-weight: bold;
+		}
 
-        p {
-            line-height: 1.7rem;
-            padding: 0 0 14px 0;
-        }
+		p {
+			line-height: 1.7rem;
+			padding: 0 0 14px 0;
+		}
 
 		.hljs,
 		code {
@@ -70,33 +68,52 @@
 	</style>
 
 	<nav
-		class="min-w-min border-b-4 px-0 md:overflow-y-scroll overflow-y-visible py-2 shadow-sm dark:border-neutral-900 md:w-[20rem] md:border-b-0 md:border-r-4 md:px-4"
+		class="min-w-min overflow-y-visible border-b-4 px-0 py-2 shadow-sm dark:border-neutral-900 md:w-[20rem] md:overflow-y-scroll md:border-b-0 md:border-r-4 md:px-4"
 	>
 		<!-- TODO: need to extract all of this into components in the future -->
-        <!-- TODO: expanded save states between screen size changes -->
-        <!-- TODO: bug: has animation when going from expanded to unexpended on window size change-->
-        <div class="md:px-0 px-4 flex-row flex justify-between">
-            <h2 class="text-xl font-bold text-blue-400 md:px-0"><a href="{base}/">aasmart-tree</a></h2>
-            <button class="flex flex-col justify-center gap-2 md:hidden aspect-square w-8" onclick={toggleMenuExpanded} aria-label={menuExpanded ? "Close menu" : "Open menu"}>
-                <span class={classNames("transition-all inline-block left-0 w-full h-[3px] bg-gray-900 dark:bg-slate-200 rounded-lg origin-right", {"-rotate-45": menuExpanded})}></span>
-                <span class={classNames("inline-block left-0 w-full h-[3px] bg-gray-900 dark:bg-slate-200 rounded-lg transition-opacity", { "opacity-0": menuExpanded})}></span>
-                <span class={classNames("transition-all inline-block left-0 w-full h-[3px] bg-gray-900 dark:bg-slate-200 rounded-lg origin-right", {"rotate-45": menuExpanded})}></span>
-            </button>
-        </div>
+		<!-- TODO: expanded save states between screen size changes -->
+		<!-- TODO: bug: has animation when going from expanded to unexpended on window size change-->
+		<div class="flex flex-row justify-between px-4 md:px-0">
+			<h2 class="text-xl font-bold text-blue-400 md:px-0"><a href="{base}/">aasmart-tree</a></h2>
+			<button
+				class="flex aspect-square w-8 flex-col justify-center gap-2 md:hidden"
+				onclick={toggleMenuExpanded}
+				aria-label={menuExpanded ? 'Close menu' : 'Open menu'}
+			>
+				<span
+					class={classNames(
+						'left-0 inline-block h-[3px] w-full origin-right rounded-lg bg-gray-900 transition-all dark:bg-slate-200',
+						{ '-rotate-45': menuExpanded }
+					)}
+				></span>
+				<span
+					class={classNames(
+						'left-0 inline-block h-[3px] w-full rounded-lg bg-gray-900 transition-opacity dark:bg-slate-200',
+						{ 'opacity-0': menuExpanded }
+					)}
+				></span>
+				<span
+					class={classNames(
+						'left-0 inline-block h-[3px] w-full origin-right rounded-lg bg-gray-900 transition-all dark:bg-slate-200',
+						{ 'rotate-45': menuExpanded }
+					)}
+				></span>
+			</button>
+		</div>
 		<ul
-            class={classNames(
-                { "rect-clip-full border-b-4 shadow-md dark:border-neutral-900": menuExpanded},
-                { "rect-clip-y-0 md:rect-clip-full": !menuExpanded},
-                "md:static md:block md:border-b-0 md:px-0 md:shadow-none md:transition-none md:overflow-visible ",
-                "shadow-md overflow-scroll max-h-2/3 h-min absolute z-30 w-full bg-light-bg px-4 pb-2 text-lg transition-[clip-path] duration-150 dark:bg-gray-bg dark:text-gray-200 text-gray-900"
-            )}
+			class={classNames(
+				{ 'rect-clip-full border-b-4 shadow-md dark:border-neutral-900': menuExpanded },
+				{ 'rect-clip-y-0 md:rect-clip-full': !menuExpanded },
+				'md:static md:block md:overflow-visible md:border-b-0 md:px-0 md:shadow-none md:transition-none ',
+				'max-h-2/3 absolute z-30 h-min w-full overflow-scroll bg-light-bg px-4 pb-2 text-lg text-gray-900 shadow-md transition-[clip-path] duration-150 dark:bg-gray-bg dark:text-gray-200'
+			)}
 		>
 			<li>
 				<h3 class="text-blue-400">
 					<i class="fa-solid fa-folder-open"></i>
 					home
 				</h3>
-				<ul class="w-full border-l-4 border-gray-300 dark:border-neutral-600 pl-6">
+				<ul class="w-full border-l-4 border-gray-300 pl-6 dark:border-neutral-600">
 					<li class="w-max rounded-md px-1 text-amber-500 dark:text-amber-400">
 						<a href="{base}/">
 							<i class="fa-solid fa-home"></i>
@@ -110,10 +127,15 @@
 					<i class="fa-solid fa-folder-open"></i>
 					projects
 				</h3>
-				<ul class="w-full border-l-4 border-gray-300 dark:border-neutral-600 pl-6">
+				<ul class="w-full border-l-4 border-gray-300 pl-6 dark:border-neutral-600">
 					{#each allProjectUrls as url, i}
-						<li class="opacity-0 w-max rounded-md px-1 animate-move-up-fade-in {data.markdownFile == url ? 'bg-neutral-200 dark:bg-neutral-700' : ''}"
-                            style="animation-delay: {50 * i}ms;">
+						<li
+							class="w-max animate-move-up-fade-in rounded-md px-1 opacity-0 {data.markdownFile ==
+							url
+								? 'bg-neutral-200 dark:bg-neutral-700'
+								: ''}"
+							style="animation-delay: {50 * i}ms;"
+						>
 							<a href="{projectDir}/{url}">
 								<i class="fa-solid fa-file"></i>
 								<span class="underline">{url}.md</span>
@@ -124,7 +146,9 @@
 			</li>
 		</ul>
 	</nav>
-	<div class="flex w-full flex-col gap-1 overflow-y-auto px-6 md:w-[100ch] text-gray-900 dark:text-gray-200">
+	<div
+		class="flex w-full flex-col gap-1 overflow-y-auto px-6 text-gray-900 dark:text-gray-200 md:w-[110ch]"
+	>
 		{#await markdown then source}
 			{#if source}
 				<div class="animate-move-up-fade-in">

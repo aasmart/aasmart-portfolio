@@ -13,6 +13,12 @@
 	import { get } from 'svelte/store';
 	import { getContext } from 'svelte';
 	import type { Theme } from './+layout.svelte';
+	import type { PageProps } from './projects/[slug]/$types';
+
+	let { data }: PageProps = $props();
+
+	let projects = $derived(data['projects']);
+	let experiences = $derived(data['experiencese']);
 
 	let terminalHistory: string[] = $state(tryRestoreHistory());
 	let terminalInput = $state('');
@@ -123,9 +129,9 @@
 				{#if name == 'about'}
 					<AboutCommandResult />
 				{:else if name == 'projects'}
-					<ProjectCommandResult />
+					<ProjectCommandResult {projects} />
 				{:else if name == 'experience'}
-					<ExperienceCommandResult />
+					<ExperienceCommandResult {experiences} />
 				{:else if name == 'clear'}
 					<ClearTerminalCommandResut {clearTerminal} />
 				{:else if name == 'theme'}

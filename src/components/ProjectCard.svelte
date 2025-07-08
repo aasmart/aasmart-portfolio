@@ -1,12 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-
-	type Project = {
-		name: string;
-		url_name: string;
-		img_name: string;
-		technologies: string[];
-	};
+	import type { Project } from '../routes/+layout.server';
 
 	let { project }: { project: Project; key: number } = $props();
 
@@ -40,7 +34,7 @@
 		class="relative h-full overflow-clip rounded-md bg-gray-300 p-0 shadow-md duration-300
 			hover:shadow-blue-400 dark:bg-gray-600"
 	>
-		<a href="{base}/projects/{project['url_name']}" class="flex size-full flex-col p-0">
+		<a href="{base}/projects/{project.id}" class="flex size-full flex-col p-0">
 			<div
 				class="absolute right-0 m-1 aspect-square rounded-lg border-[1px] border-neutral-950
 					bg-neutral-900/60 p-2 shadow-md"

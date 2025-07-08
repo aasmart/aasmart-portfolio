@@ -1,11 +1,5 @@
 <script lang="ts">
-	type ExperienceItem = {
-		title: string;
-		description: string;
-		start_date: string;
-		end_date?: string;
-		name: string;
-	};
+	import type { ExperienceItem } from '../routes/+layout.server';
 
 	let { item }: { item: ExperienceItem } = $props();
 

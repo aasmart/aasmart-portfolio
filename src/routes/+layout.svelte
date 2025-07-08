@@ -7,6 +7,7 @@
 
 	import '../app.css';
 	import { afterNavigate } from '$app/navigation';
+	import { base } from '$app/paths';
 	let { children } = $props();
 
 	// theme handling
