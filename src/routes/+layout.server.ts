@@ -9,6 +9,7 @@ export type Project = {
     id: string;
     img_name: string;
     technologies: string[];
+    github_url?: string
 };
 
 export type PersonalExperience = {

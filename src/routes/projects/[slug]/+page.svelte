@@ -24,6 +24,8 @@
 	});
 	let allProjectUrls = $derived<String[]>(Array.from(data.projects.keys()));
 
+	let projectData = $derived(data.projects.get(data.markdownFile));
+
 	let menuExpanded = $state<boolean>(false);
 	let toggleMenuExpanded = () => {
 		menuExpanded = !menuExpanded;
@@ -152,6 +154,20 @@
 		{#await markdown then source}
 			{#if source}
 				<div class="animate-move-up-fade-in">
+					<header class="text-blue-400">
+						{#if projectData?.github_url}
+							<a href={projectData.github_url}>
+								<h1>
+									{projectData?.name}
+									<i class="fa-brands fa-github"></i>
+								</h1>
+							</a>
+						{:else}
+							<h1>
+								{projectData?.name}
+							</h1>
+						{/if}
+					</header>
 					<SvelteMarkdown {source} />
 					<script>
 						hljs.highlightAll();
