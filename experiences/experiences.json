@@ -1,38 +1,36 @@
-{
-    "experiences": [
-        {
-            "name": "Future of Programming Lab",
-            "title": "Language Developer",
-            "description": "Using ReasonML/Ocaml to extend the language with novel new features, such as\nexamples for inexhaustive pattern matching when inconsistencies are present.",
-            "start_date": "2025-05-01",
-            "skills": [
-                "ReasonML",
-                "Ocaml"
-            ]
-        },
-        {
-            "name": "EECS281 (DS&A) @ UofM",
-            "title": "Instructional Aide (TA)",
-            "description": "Leading lab sections, holding office hours, and actively seeking to improve\nexisting course material (e.g. I redid our lab slides on DP with 100+ new\nslides.)",
-            "start_date": "2024-08-01",
-            "skills": [
-                "Teaching"
-            ]
-        },
-        {
-            "name": "Innovation for Impact",
-            "title": "Project Lead and Developer",
-            "description": "Here I collaborate with other developers to create interesting real world\nprojects, such as a Fintech app, and an app for keeping track of your\nfriend group's incredible Lore.",
-            "start_date": "2024-01-08",
-            "skills": []
-        },
-        {
-            "name": "University of Michigan Dining",
-            "title": "Researcher",
-            "description": "I worked with MDining to identify areas where we could reduce palm oil\nconsumption. To do this, I developed a Python script to estimate palm oil\nfrom thousands of product's ingredient list.",
-            "start_date": "2023-10-01",
-            "end_date": "2024-4-01",
-            "skills": []
-        }
-    ]
-}
+[
+    {
+        "name": "Future of Programming Lab",
+        "title": "Language Developer",
+        "description": "Using ReasonML/Ocaml to extend the language with novel new features, such as\nexamples for inexhaustive pattern matching when inconsistencies are present.",
+        "start_date": "2025-05-01",
+        "skills": [
+            "ReasonML",
+            "Ocaml"
+        ]
+    },
+    {
+        "name": "EECS281 (DS&A) @ UofM",
+        "title": "Instructional Aide (TA)",
+        "description": "Leading lab sections, holding office hours, and actively seeking to improve\nexisting course material (e.g. I redid our lab slides on DP with 100+ new\nslides.)",
+        "start_date": "2024-08-01",
+        "skills": [
+            "Teaching"
+        ]
+    },
+    {
+        "name": "Innovation for Impact",
+        "title": "Project Lead and Developer",
+        "description": "Here I collaborate with other developers to create interesting real world\nprojects, such as a Fintech app, and an app for keeping track of your\nfriend group's incredible Lore.",
+        "start_date": "2024-01-08",
+        "skills": []
+    },
+    {
+        "name": "University of Michigan Dining",
+        "title": "Researcher",
+        "description": "I worked with MDining to identify areas where we could reduce palm oil\nconsumption. To do this, I developed a Python script to estimate palm oil\nfrom thousands of product's ingredient list.",
+        "start_date": "2023-10-01",
+        "end_date": "2024-4-01",
+        "skills": []
+    }
+]
