@@ -15,7 +15,7 @@
 {#await projectsPromise}
 	<p class="text-gray-900 dark:text-gray-50">Loading...</p>
 {:then projects}
-	<section use:focus class="min-w-max">
+	<section use:focus class="w-full">
 		<p class="my-3 text-xl text-gray-900 dark:text-gray-50">
 			Found <span class="font-bold text-blue-400">{projects['projects'].length}</span> projects...
 		</p>

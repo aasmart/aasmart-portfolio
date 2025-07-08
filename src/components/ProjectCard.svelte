@@ -56,7 +56,7 @@
 
 			<div class="flex flex-col items-center gap-1 bg-gray-100 p-1 text-xl dark:bg-[#292929]">
 				<h3 class="text-center dark:text-gray-50">{project['name']}</h3>
-				<ul class="flex flex-row gap-2">
+				<ul class="flex flex-row flex-wrap justify-center gap-2">
 					{#each project['technologies'] as tech}
 						<li class="size-8">
 							<img
