@@ -14,11 +14,34 @@
         "github_url": "https://github.com/aasmart/aasmart-portfolio"
     },
     {
-        "id": "wip",
-        "name": "More projects coming soon...",
+        "id": "nudge",
+        "name": "Nudge",
         "technologies": [
-            "cplusplus"
+            "electron",
+            "typescript",
+            "html5",
+            "css3",
+            "figma"
         ],
+        "img_name": "nudge.png",
+        "github_url": "https://github.com/aasmart/Nudge"
+    },
+    {
+        "id": "connect_four",
+        "name": "Fullstack Connect Four",
+        "technologies": [
+            "kotlin",
+            "react",
+            "typescript",
+            "css3"
+        ],
+        "img_name": "connect_four.png",
+        "github_url": "https://github.com/aasmart/Connect-Four"
+    },
+    {
+        "id": "wip",
+        "name": "Working on adding projects here...",
+        "technologies": [],
         "img_name": "portfolio.png"
     }
 ]
