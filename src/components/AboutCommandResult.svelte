@@ -5,7 +5,7 @@
 
 	let focusCommand = getContext<() => void>('requestFocus');
 
-	let focus: Action = (_) => {
+	let focus: Action = () => {
 		focusCommand();
 	};
 </script>
@@ -13,7 +13,7 @@
 <section
 	use:focus
 	class="flex max-w-[100rem] animate-grow-fade-in flex-col items-center gap-4 rounded-md border-2
-		border-blue-400 p-2 sm:w-3/4 lg:flex-row"
+		border-blue-400 p-2 lg:flex-row"
 >
 	<img
 		class="aspect-square max-h-[18em] rounded-full shadow-lg sm:w-auto"

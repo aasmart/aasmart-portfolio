@@ -24,7 +24,6 @@
 	let terminalHistory: string[] = $state(tryRestoreHistory());
 	let terminalInput = $state('');
 	let updatedTerminalHistory = $state(false);
-	// svelte-ignore non_reactive_update
 	let terminalHistoryElement: HTMLElement;
 
 	function addToHistory(command: string) {
@@ -124,7 +123,7 @@
 <ul
 	bind:this={terminalHistoryElement}
 	use:tryRestoreScrollPosAction
-	class="h-full overflow-y-scroll"
+	class="h-full overflow-y-scroll pr-[calc(100%-160ch)]"
 	onscroll={onScroll}
 >
 	{#each terminalHistory as name, index}
