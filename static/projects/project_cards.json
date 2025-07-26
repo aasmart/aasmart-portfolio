@@ -8,7 +8,8 @@
             "TailwindCSS",
             "HTML5",
             "CSS3",
-            "Figma"
+            "Figma",
+            "Git"
         ],
         "description": "My corner of the internet",
         "img_name": "favicon.png",
@@ -23,7 +24,8 @@
             "Typescript",
             "HTML5",
             "CSS3",
-            "Figma"
+            "Figma",
+            "Git"
         ],
         "img_name": "nudge.png",
         "description": "A time management and productivity application",
@@ -37,7 +39,8 @@
             "Kotlin",
             "React",
             "Typescript",
-            "CSS3"
+            "CSS3",
+            "Git"
         ],
         "img_name": "connect_four.png",
         "description": "A realtime, multiplayer Connect Four game",
@@ -47,12 +50,13 @@
     },
     {
         "id": "magnet_game",
-        "name": "Drawn Apart, Pulled Together",
+        "name": "Drawn Together, Pulled Apart",
         "technologies": [
             "CSharp",
             "Unity",
+            "Jira",
             "Photoshop",
-            "Jira"
+            "Git"
         ],
         "img_name": "drawn_together.png",
         "github_url": "https://rafesymonds.itch.io/drawn-together-pulled-apart",

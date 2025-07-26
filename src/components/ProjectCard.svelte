@@ -40,15 +40,17 @@
 		class="relative h-full overflow-clip rounded-md border-[1px] border-neutral-400 shadow-md duration-300 hover:-translate-y-2 dark:border-neutral-700 dark:hover:border-blue-400"
 	>
 		<a href="{base}/projects/{project.id}" class="flex size-full flex-col p-0">
-			<div
-				class="absolute right-0 m-1 aspect-square rounded-lg border-[1px] border-neutral-950
-					bg-neutral-900/60 p-2 shadow-md"
-				title="Learn more!"
-			>
-				<i class="fa-solid fa-arrow-up-right-from-square m-0 aspect-square text-xl text-amber-400"
-				></i>
+			<div class="absolute right-0 m-1 flex h-12 flex-row gap-1 text-2xl">
+				<div
+					class="aspect-square rounded-lg border-[1px] border-neutral-950
+                        bg-neutral-900/60 p-2 shadow-md"
+					title="Learn more!"
+				>
+					<i
+						class="fa-solid fa-arrow-up-right-from-square aspect-square w-full text-center text-amber-400"
+					></i>
+				</div>
 			</div>
-			<div></div>
 
 			<div class="h-20 w-full grow p-0">
 				<img

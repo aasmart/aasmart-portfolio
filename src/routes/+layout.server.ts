@@ -12,7 +12,7 @@ export type Project = {
     description: string,
     github_url?: string,
     start_date: string,
-    end_date?: string
+    end_date?: string,
 };
 
 export type PersonalExperience = {
