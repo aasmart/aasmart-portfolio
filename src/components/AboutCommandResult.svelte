@@ -13,7 +13,7 @@
 <section
 	use:focus
 	class="flex max-w-[100rem] animate-grow-fade-in flex-col items-center gap-4 rounded-md
-		border-[1px] border-neutral-400 bg-gray-100 p-2 shadow-md duration-300 hover:-translate-y-2 dark:border-neutral-700 dark:bg-neutral-800 lg:flex-row"
+		border-[1px] border-neutral-400 bg-gray-100 p-2 shadow-md hover:-translate-y-2 dark:border-neutral-700 dark:bg-neutral-800 lg:flex-row"
 >
 	<img
 		class="aspect-square max-h-[18em] rounded-full shadow-lg sm:w-auto"
