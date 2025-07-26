@@ -30,7 +30,8 @@
 </script>
 
 <div
-	class="relative scale-0 overflow-hidden rounded-lg bg-neutral-100 p-2 opacity-0 shadow-md transition-opacity duration-300 dark:bg-neutral-800 dark:text-gray-50 {isInView
+	class="relative scale-0 overflow-hidden rounded-lg border-[1px] border-neutral-400 bg-neutral-100 p-2 opacity-0 shadow-md
+            transition-opacity duration-300 dark:border-neutral-700 dark:bg-neutral-800 dark:text-gray-50 {isInView
 		? 'animate-grow-fade-in'
 		: ''}"
 	bind:this={element}
