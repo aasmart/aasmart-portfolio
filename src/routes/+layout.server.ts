@@ -21,6 +21,7 @@ export type PersonalExperience = {
     start_date: string;
     end_date?: string;
     name: string;
+    technologies: string[];
 };
 
 async function getProjects(fetch: (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>) {

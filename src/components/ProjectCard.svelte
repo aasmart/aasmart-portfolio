@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import type { Project } from '../routes/+layout.server';
 	import { formatDateStringMMYY } from '../util/date';
+	import TechnologyList from './TechnologyList.svelte';
 
 	let { project }: { project: Project; key: number } = $props();
 
@@ -72,21 +73,7 @@
 					</span>
 				</div>
 				<p class="text-sm">{project.description}</p>
-				<ul class="flex flex-1 flex-row flex-wrap gap-1">
-					{#each project['technologies'] as tech}
-						{@const techLower = tech.toLowerCase()}
-						<li
-							class="flex h-min flex-row items-center gap-2 rounded-md border-2 border-neutral-400 p-2 text-sm transition-colors hover:border-blue-400 dark:border-neutral-700 dark:hover:border-blue-400"
-						>
-							<img
-								class="size-6"
-								src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/{techLower}/{techLower}-original.svg"
-								alt={tech}
-								title={tech}
-							/>
-						</li>
-					{/each}
-				</ul>
+				<TechnologyList technologies={project.technologies} />
 			</div>
 		</a>
 	</div>

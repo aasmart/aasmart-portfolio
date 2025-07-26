@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PersonalExperience } from '../routes/proxy+layout.server';
 	import { formatDateStringMMYY } from '../util/date';
+	import TechnologyList from './TechnologyList.svelte';
 
 	let { item }: { item: PersonalExperience } = $props();
 
@@ -51,10 +52,11 @@
 				{/if})
 			</span>
 		</p>
-		<div class="whitespace-pre-line dark:border-gray-600">
+		<div class="mb-2 whitespace-pre-line dark:border-gray-600">
 			<p class="text-gray-800 dark:text-gray-200">
 				{item.description}
 			</p>
 		</div>
+		<TechnologyList technologies={item.technologies}></TechnologyList>
 	</div>
 </div>

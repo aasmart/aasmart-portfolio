@@ -4,9 +4,9 @@
         "title": "Language Developer",
         "description": "Using ReasonML/Ocaml to extend the language with novel new features, such as examples for inexhaustive pattern matching when inconsistencies are present.",
         "start_date": "2025-05-01",
-        "skills": [
-            "ReasonML",
-            "Ocaml"
+        "technologies": [
+            "Ocaml",
+            "Git"
         ]
     },
     {
@@ -14,8 +14,8 @@
         "title": "Instructional Aide (TA)",
         "description": "Leading lab sections, holding office hours, and actively seeking to improve existing course material (e.g. I redid our lab slides on DP with 100+ new slides.)",
         "start_date": "2024-08-01",
-        "skills": [
-            "Teaching"
+        "technologies": [
+            "CPlusPlus"
         ]
     },
     {
@@ -23,7 +23,13 @@
         "title": "Project Lead, Developer",
         "description": "Here I collaborate with other developers to create interesting real world projects, such as a Fintech app, and an app for keeping track of your friend group's incredible Lore.",
         "start_date": "2024-01-08",
-        "skills": []
+        "technologies": [
+            "Python",
+            "DjangoRest",
+            "Git",
+            "React",
+            "Figma"
+        ]
     },
     {
         "name": "University of Michigan Dining",
@@ -31,6 +37,8 @@
         "description": "I worked with MDining to identify areas where we could reduce palm oil consumption. To do this, I developed a Python script to estimate palm oil from thousands of product's ingredient list.",
         "start_date": "2023-10-01",
         "end_date": "2024-4-01",
-        "skills": []
+        "technologies": [
+            "Python"
+        ]
     }
 ]
