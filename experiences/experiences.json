@@ -2,28 +2,35 @@
     {
         "name": "Future of Programming Lab",
         "title": "Language Developer",
-        "description": "Using ReasonML/Ocaml to extend the language with novel new features, such as examples for inexhaustive pattern matching when inconsistencies are present.",
+        "description": "Using ReasonML/Ocaml to extend the language with novel new features. What I have worked on (or am currently worked) on is: \n - Implemented a novel algorithm for examples for inexhaustive pattern matching when inconsistencies are present (a challenging \"starter project\"!).\n - Developing a novel algorithm to handle (cyclic!) constraint graphs to provide the programmer all possible types for all holes in their program",
         "start_date": "2025-05-01",
-        "skills": [
-            "ReasonML",
-            "Ocaml"
+        "technologies": [
+            "Ocaml",
+            "Git",
+            "VScode"
         ]
     },
     {
         "name": "EECS281 (DS&A) @ UofM",
         "title": "Instructional Aide (TA)",
-        "description": "Leading lab sections, holding office hours, and actively seeking to improve existing course material (e.g. I redid our lab slides on DP with 100+ new slides.)",
+        "description": "Leading lab sections, holding office hours, and actively seeking to improve existing course material (e.g. I redid our lab slides on DP with 100+ new slides because the existing ones presented a single problem that was too hard for most students to understand.)",
         "start_date": "2024-08-01",
-        "skills": [
-            "Teaching"
+        "technologies": [
+            "CPlusPlus"
         ]
     },
     {
         "name": "Innovation for Impact",
         "title": "Project Lead, Developer",
-        "description": "Here I collaborate with other developers to create interesting real world projects, such as a Fintech app, and an app for keeping track of your friend group's incredible Lore.",
+        "description": "I collaborate with other developers to create interesting real world projects, such as a Fintech app, and an app for keeping track of your friend group's incredible Lore.",
         "start_date": "2024-01-08",
-        "skills": []
+        "technologies": [
+            "Python",
+            "DjangoRest",
+            "Git",
+            "React",
+            "Figma"
+        ]
     },
     {
         "name": "University of Michigan Dining",
@@ -31,6 +38,8 @@
         "description": "I worked with MDining to identify areas where we could reduce palm oil consumption. To do this, I developed a Python script to estimate palm oil from thousands of product's ingredient list.",
         "start_date": "2023-10-01",
         "end_date": "2024-4-01",
-        "skills": []
+        "technologies": [
+            "Python"
+        ]
     }
 ]
