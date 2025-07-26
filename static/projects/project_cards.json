@@ -3,45 +3,69 @@
         "id": "personal_website",
         "name": "Personal Website",
         "technologies": [
-            "svelte",
-            "typescript",
-            "tailwindcss",
-            "html5",
-            "css3",
-            "figma"
+            "Svelte",
+            "Typescript",
+            "TailwindCSS",
+            "HTML5",
+            "CSS3",
+            "Figma"
         ],
-        "img_name": "portfolio.png",
-        "github_url": "https://github.com/aasmart/aasmart-portfolio"
+        "description": "My corner of the internet",
+        "img_name": "favicon.png",
+        "github_url": "https://github.com/aasmart/aasmart-portfolio",
+        "start_date": "2025-02-01"
     },
     {
         "id": "nudge",
         "name": "Nudge",
         "technologies": [
-            "electron",
-            "typescript",
-            "html5",
-            "css3",
-            "figma"
+            "Electron",
+            "Typescript",
+            "HTML5",
+            "CSS3",
+            "Figma"
         ],
         "img_name": "nudge.png",
-        "github_url": "https://github.com/aasmart/Nudge"
+        "description": "A time management and productivity application",
+        "github_url": "https://github.com/aasmart/Nudge",
+        "start_date": "2023-05-01"
     },
     {
         "id": "connect_four",
         "name": "Fullstack Connect Four",
         "technologies": [
-            "kotlin",
-            "react",
-            "typescript",
-            "css3"
+            "Kotlin",
+            "React",
+            "Typescript",
+            "CSS3"
         ],
         "img_name": "connect_four.png",
-        "github_url": "https://github.com/aasmart/Connect-Four"
+        "description": "A realtime, multiplayer Connect Four game",
+        "github_url": "https://github.com/aasmart/Connect-Four",
+        "start_date": "2023-6-01",
+        "end_date": "2023-8-01"
+    },
+    {
+        "id": "magnet_game",
+        "name": "Drawn Apart, Pulled Together",
+        "technologies": [
+            "CSharp",
+            "Unity",
+            "Photoshop",
+            "Jira"
+        ],
+        "img_name": "drawn_together.png",
+        "github_url": "https://rafesymonds.itch.io/drawn-together-pulled-apart",
+        "description": "A puzzle-platformer video game with magnets as its core mechanic.",
+        "start_date": "2025-3-01",
+        "end_date": "2025-4-01"
     },
     {
         "id": "wip",
-        "name": "Working on adding projects here...",
+        "name": "WIP",
         "technologies": [],
-        "img_name": "portfolio.png"
+        "description": "I'm working on adding more projects here :)",
+        "img_name": "under_construction_PNG68.png",
+        "start_date": "2025-02-01"
     }
 ]

@@ -19,7 +19,8 @@
 		Found <span class="font-bold text-blue-400">{projects.size}</span> projects...
 	</p>
 
-	<div class="grid grid-cols-1 gap-6 sm:grid-cols-[repeat(auto-fill,clamp(18em,23%,24.5em))]">
+	<!-- sm:grid-cols-[repeat(auto-fill,clamp(18em,23%,24.5em))] -->
+	<div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
 		{#each projectValues as project, index}
 			<ProjectCard {project} key={index} />
 		{/each}

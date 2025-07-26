@@ -1,18 +1,11 @@
 <script lang="ts">
 	import type { PersonalExperience } from '../routes/proxy+layout.server';
+	import { formatDateStringMMYY } from '../util/date';
 
 	let { item }: { item: PersonalExperience } = $props();
 
-	let formattedStartDate = new Date(Date.parse(item.start_date)).toLocaleDateString('en-US', {
-		month: 'short',
-		year: 'numeric'
-	});
-	let formattedEndDate = item.end_date
-		? new Date(Date.parse(item.end_date)).toLocaleDateString('en-US', {
-				month: 'short',
-				year: 'numeric'
-			})
-		: 'Present';
+	let formattedStartDate = formatDateStringMMYY(item.start_date);
+	let formattedEndDate = item.end_date ? formatDateStringMMYY(item.end_date) : 'Present';
 	let isCurrent = !item.end_date;
 
 	let isInView = $state(false);
