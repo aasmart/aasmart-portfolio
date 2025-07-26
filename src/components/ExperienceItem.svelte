@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { ExperienceItem } from '../routes/+layout.server';
+	import type { PersonalExperience } from '../routes/proxy+layout.server';
 
-	let { item }: { item: ExperienceItem } = $props();
+	let { item }: { item: PersonalExperience } = $props();
 
 	let formattedStartDate = new Date(Date.parse(item.start_date)).toLocaleDateString('en-US', {
 		month: 'short',

@@ -6,7 +6,7 @@
 	}: {
 		submitCommand: (event: KeyboardEvent) => void;
 		commandText: string;
-		[x: string]: any;
+		[x: string]: unknown;
 	} = $props();
 </script>
 

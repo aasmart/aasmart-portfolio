@@ -6,7 +6,7 @@
 	let { theme, setTheme }: { theme: Theme; setTheme: (theme: Theme) => void } = $props();
 
 	let requestFocus = getContext<() => void>('requestFocus');
-	let focus: Action = (_) => {
+	let focus: Action = () => {
 		requestFocus();
 	};
 

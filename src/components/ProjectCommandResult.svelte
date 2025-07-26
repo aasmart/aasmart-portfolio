@@ -4,12 +4,12 @@
 	import { getContext } from 'svelte';
 	import type { Project } from '../routes/+layout.server';
 
-	const { projects }: { projects: Map<String, Project> } = $props();
+	const { projects }: { projects: Map<string, Project> } = $props();
 
 	let projectValues = $derived(projects.values());
 
 	let focusCommand = getContext<() => void>('requestFocus');
-	let focus: Action = (_) => {
+	let focus: Action = () => {
 		focusCommand();
 	};
 </script>

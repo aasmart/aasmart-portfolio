@@ -5,7 +5,7 @@
 	let { name }: { name: string } = $props();
 
 	let focusCommand = getContext<() => void>('requestFocus');
-	let focus: Action = (_) => {
+	let focus: Action = () => {
 		focusCommand();
 	};
 </script>

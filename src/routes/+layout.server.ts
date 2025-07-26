@@ -24,7 +24,7 @@ async function getProjects(fetch: (input: RequestInfo | URL, init?: RequestInit)
     return fetch(`${base}/projects/project_cards.json`)
         .then((res) => res.json())
         .then((proj: [Project]) => {
-            return new Map<String, Project>(proj.map(p => [p.id, p]));
+            return new Map<string, Project>(proj.map(p => [p.id, p]));
         });
 }
 

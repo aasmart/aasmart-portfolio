@@ -8,7 +8,7 @@
 
 	let requestFocus = getContext<() => void>('requestFocus');
 
-	let focus: Action = (_) => {
+	let focus: Action = () => {
 		requestFocus();
 	};
 
@@ -32,7 +32,7 @@
 	</h2>
 
 	<ul class="flex flex-col gap-4 border-l-4 border-gray-300 pl-4 dark:border-gray-600">
-		{#each experiences as exp, index}
+		{#each experiences as exp}
 			<li
 				class="relative before:absolute before:-left-7 before:top-3 before:h-[20px] before:w-[20px] before:rotate-45 before:rounded-md before:bg-blue-400"
 			>
