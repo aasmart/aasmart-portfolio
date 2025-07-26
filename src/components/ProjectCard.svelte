@@ -17,7 +17,7 @@
 
 	$effect(() => {
 		let options = {
-			threshold: 0.5
+			threshold: 0.25
 		};
 		let observer = new IntersectionObserver(onChangeVisibility, options);
 		if (element) {
