@@ -12,8 +12,8 @@
 
 <section
 	use:focus
-	class="flex max-w-[100rem] animate-grow-fade-in flex-col items-center gap-4 rounded-md border-2
-		border-blue-400 p-2 lg:flex-row"
+	class="flex max-w-[100rem] animate-grow-fade-in flex-col items-center gap-4 rounded-md
+		border-[1px] border-neutral-400 bg-gray-100 p-2 shadow-md duration-300 hover:-translate-y-2 dark:border-neutral-700 dark:bg-neutral-800 lg:flex-row"
 >
 	<img
 		class="aspect-square max-h-[18em] rounded-full shadow-lg sm:w-auto"
@@ -26,12 +26,14 @@
 		<hr class="border-1 my-1 w-full rounded-full" />
 		<p class="h-max w-full text-center lg:text-start">
 			Hi! <span>👋</span> I'm currently an undergraduate student at the University of Michigan
-			&mdash; Ann Arbor. I'm pretty interested in most things computer science, but I've discovered
-			that I especially enjoy programming languages, systems, and building useful software.
-
+			&mdash; Ann Arbor. I enjoy (with various levels of interest) an array of topics from
+			programming, CS thoery, and hardware. However, I've discovered that I especially enjoy
+			programming languages, systems, and building useful software.
 			<br /><br />
-			This site is still in its early days, so if it seems a little empty here, it's because it is. However,
-			I invite you to have a look around with either the nav buttons, or with the actual command line.
+			Outside of computer programming, I frequently go to the gym and mainly do calisthenics (I have
+			a long background in gymnastics!). I also dabble in the arts, as I have some 3D modeling and drawing
+			capabilities. I do enjoy playing video games when time permits, with some favorites of mine being
+			Satisfactory, Terraria, and ARK 🦖.
 		</p>
 		<ul
 			class="mt-auto flex flex-row flex-wrap items-center justify-center gap-3 pt-2 text-4xl
