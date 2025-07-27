@@ -7,7 +7,7 @@ export const trailingSlash = 'always';
 export type Project = {
     name: string;
     id: string;
-    img_name: string;
+    images: string[];
     technologies: string[];
     description: string,
     github_url?: string,

@@ -52,12 +52,10 @@
 				</div>
 			</div>
 
-			<div class="h-20 w-full grow p-0">
-				<img
-					class="h-full w-full overflow-hidden object-cover"
-					src="{base}/{project['img_name']}"
-					alt="t"
-				/>
+			<div class="flex h-20 w-full grow flex-row gap-[1px] p-0">
+				{#each project.images as image}
+					<img class="h-full w-full overflow-hidden object-cover" src="{base}/{image}" alt="t" />
+				{/each}
 			</div>
 
 			<div
