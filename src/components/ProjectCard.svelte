@@ -74,7 +74,7 @@
 						{/if}
 					</span>
 				</div>
-				<p class="text-sm">{project.description}</p>
+				<p>{project.description}</p>
 				<TechnologyList technologies={project.technologies} />
 			</div>
 		</a>

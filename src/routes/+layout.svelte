@@ -68,6 +68,6 @@
 		box-sizing: border-box;
 	}
 	:global(*:not(i), *:not(i)::after, *:not(i)::before) {
-		font-family: 'JetBrains Mono', monospace;
+		font-family: 'Ubuntu', sans-serif;
 	}
 </style>
