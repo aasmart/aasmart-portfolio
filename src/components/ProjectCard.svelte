@@ -37,7 +37,7 @@
 		rounded-md opacity-0 duration-300"
 >
 	<div
-		class="relative h-full overflow-clip rounded-md border-[1px] border-neutral-400 shadow-md duration-300 hover:-translate-y-2 dark:border-neutral-700 dark:hover:border-blue-400"
+		class="relative h-full overflow-clip rounded-md border-[1px] border-neutral-400 shadow-md duration-300 ease-out hover:-translate-y-4 hover:border-blue-400 hover:shadow-lg dark:border-neutral-700 dark:hover:border-blue-400"
 	>
 		<a href="{base}/projects/{project.id}" class="flex size-full flex-col p-0">
 			<div class="absolute right-0 m-1 flex h-12 flex-row gap-1 text-2xl">

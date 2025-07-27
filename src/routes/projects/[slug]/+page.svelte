@@ -3,12 +3,10 @@
 	import SvelteMarkdown from '@humanspeak/svelte-markdown';
 	import { base } from '$app/paths';
 	import classNames from 'classnames';
-	import { beforeNavigate } from '$app/navigation';
-	import { page } from '$app/state';
 
 	let { data }: PageProps = $props();
 	let projectDir = $state(`${base}/projects`);
-	let allProjectUrls = $derived<String[]>(Array.from(data.projects.keys()));
+	let allProjectUrls = $derived<string[]>(Array.from(data.projects.keys()));
 
 	let projectData = $derived(data.projects.get(data.markdownFile));
 
@@ -16,10 +14,6 @@
 	let toggleMenuExpanded = () => {
 		menuExpanded = !menuExpanded;
 	};
-
-	beforeNavigate(() => {
-		const historyJson = page.state.terminalHistory;
-	});
 </script>
 
 <!-- TODO: general theming improvements -->
