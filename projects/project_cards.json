@@ -12,7 +12,9 @@
             "Git"
         ],
         "description": "My corner of the internet",
-        "img_name": "favicon.png",
+        "images": [
+            "favicon.png"
+        ],
         "github_url": "https://github.com/aasmart/aasmart-portfolio",
         "start_date": "2025-02-01"
     },
@@ -27,10 +29,31 @@
             "Figma",
             "Git"
         ],
-        "img_name": "nudge.png",
+        "images": [
+            "nudge.png"
+        ],
         "description": "A time management and productivity application",
         "github_url": "https://github.com/aasmart/Nudge",
         "start_date": "2023-05-01"
+    },
+    {
+        "id": "goalpost",
+        "name": "Goalpost",
+        "technologies": [
+            "Kotlin",
+            "JetpackCompose",
+            "Android",
+            "AndroidStudio",
+            "Python"
+        ],
+        "images": [
+            "goalpost_1.png",
+            "goalpost_2.png"
+        ],
+        "github_url": "https://github.com/aasmart/Goalpost",
+        "description": "An app to learn mobile development and manage my goals",
+        "start_date": "2023-12-01",
+        "end_date": "2024-01-01"
     },
     {
         "id": "connect_four",
@@ -42,7 +65,9 @@
             "CSS3",
             "Git"
         ],
-        "img_name": "connect_four.png",
+        "images": [
+            "connect_four.png"
+        ],
         "description": "A realtime, multiplayer Connect Four game",
         "github_url": "https://github.com/aasmart/Connect-Four",
         "start_date": "2023-6-01",
@@ -58,7 +83,9 @@
             "Photoshop",
             "Git"
         ],
-        "img_name": "drawn_together.png",
+        "images": [
+            "drawn_together.png"
+        ],
         "github_url": "https://rafesymonds.itch.io/drawn-together-pulled-apart",
         "description": "A puzzle-platformer video game with magnets as its core mechanic.",
         "start_date": "2025-3-01",
@@ -69,7 +96,9 @@
         "name": "WIP",
         "technologies": [],
         "description": "I'm working on adding more projects here :)",
-        "img_name": "under_construction_PNG68.png",
+        "images": [
+            "under_construction_PNG68.png"
+        ],
         "start_date": "2025-02-01"
     }
 ]
