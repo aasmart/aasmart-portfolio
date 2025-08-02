@@ -24,6 +24,24 @@ export type PersonalExperience = {
     technologies: string[];
 };
 
+export type Course = {
+    name: string;
+    number: string;
+    description: string;
+    start_date: string;
+    end_date?: string;
+    technologies: string[];
+};
+
+export type Education = {
+    name: string;
+    gpa: number;
+    gpa_max: number;
+    start_year: number;
+    end_year: number;
+    courses: Course[];
+}
+
 async function getProjects(fetch: (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>) {
     return fetch(`${base}/projects/project_cards.json`)
         .then((res) => res.json())
@@ -35,11 +53,17 @@ async function getProjects(fetch: (input: RequestInfo | URL, init?: RequestInit)
 async function getExperiences(fetch: (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>) {
     return fetch(`${base}/experiences/experiences.json`)
         .then((res) => res.json()) as Promise<[PersonalExperience]>
-
 }
+
+async function getEducation(fetch: (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>) {
+    return fetch(`${base}/education/education.json`)
+        .then((res) => res.json()) as Promise<[Education]>
+}
+
 export const load: LayoutServerLoad = async ({ fetch }) => {
     return {
         projects: await getProjects(fetch),
-        experiencese: await getExperiences(fetch)
+        experiencese: await getExperiences(fetch),
+        education: await getEducation(fetch)
     };
 };

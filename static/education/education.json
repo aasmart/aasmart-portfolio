@@ -1,0 +1,76 @@
+[
+    {
+        "name": "University of Michigan – Ann Arbor",
+        "gpa": 4.00,
+        "gpa_max": 4.00,
+        "start_date": "2023",
+        "end_date": "2027",
+        "courses": [
+            {
+                "name": "Compiler Construction",
+                "number": "EECS 483",
+                "description": "Crashed out like seven times.",
+                "technologies": [
+                    "Rust"
+                ]
+            },
+            {
+                "name": "Web Systems",
+                "number": "EECS 485",
+                "description": "HOW DID I FAIL LIKE THREE PRIVATE TESTS??? I TESTED MAP REDUCE 233 TIMES I SWEAR!",
+                "technologies": [
+                    "Python",
+                    "Typescript",
+                    "Flask",
+                    "React",
+                    "PyTest"
+                ]
+            },
+            {
+                "name": "Game Design and Development",
+                "number": "EECS 494",
+                "description": "I didn't do my teammate's shader. I now fear for my life every day.",
+                "technologies": [
+                    "Unity",
+                    "CSharp",
+                    "Jira"
+                ]
+            },
+            {
+                "name": "Foundations of Computer Science",
+                "number": "EECS 376",
+                "description": "Nearly cooked me.",
+                "technologies": [
+                    "Latex"
+                ]
+            },
+            {
+                "name": "Introduction to Computer Organization",
+                "number": "EECS 370",
+                "description": "Was free until the final exam tore a hole in the fabric of the universe.",
+                "technologies": [
+                    "C"
+                ]
+            },
+            {
+                "name": "Data Structures and Algorithms",
+                "number": "EECS 281",
+                "description": "Trolled by runtime on a single test case on p1, but secured that free A+ and an IA position.",
+                "technologies": [
+                    "CPlusPlus"
+                ]
+            },
+            {
+                "name": "Computer Science Pragmatics",
+                "number": "EECS 201",
+                "description": "Cool class.",
+                "technologies": [
+                    "Bash",
+                    "Linux",
+                    "Git",
+                    "Vim"
+                ]
+            }
+        ]
+    }
+]

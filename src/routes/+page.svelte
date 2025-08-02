@@ -15,11 +15,13 @@
 	import type { Theme } from './+layout.svelte';
 	import type { PageProps } from './projects/[slug]/$types';
 	import type { Action } from 'svelte/action';
+	import EducationCommandResult from '../components/EducationCommandResult.svelte';
 
 	let { data }: PageProps = $props();
 
 	let projects = $derived(data['projects']);
 	let experiences = $derived(data['experiencese']);
+	let education = $derived(data['education']);
 
 	let terminalHistory: string[] = $state(tryRestoreHistory());
 	let terminalInput = $state('');
@@ -114,6 +116,7 @@
 			<NavButton command={'about'} {addToHistory} />
 			<NavButton command={'projects'} {addToHistory} />
 			<NavButton command={'experience'} {addToHistory} />
+			<NavButton command={'education'} {addToHistory} />
 			<NavButton command={'theme'} {addToHistory} />
 			<NavButton command={'clear'} {addToHistory} />
 		</ul>
@@ -140,6 +143,8 @@
 					<ProjectCommandResult {projects} />
 				{:else if name == 'experience'}
 					<ExperienceCommandResult {experiences} />
+				{:else if name == 'education'}
+					<EducationCommandResult {education} />
 				{:else if name == 'clear'}
 					<ClearTerminalCommandResut {clearTerminal} />
 				{:else if name == 'theme'}
