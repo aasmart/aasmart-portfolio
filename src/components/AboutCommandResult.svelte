@@ -45,6 +45,7 @@
 						focus:text-blue-500"
 					href="https://github.com/aasmart"
 					aria-label="LinkedIn"
+					target="_blank"
 				>
 					<i class="fa-brands fa-github"></i>
 				</a>
@@ -55,6 +56,7 @@
 						focus:text-blue-500"
 					href="https://linkedin.com/in/aasmart"
 					aria-label="Github"
+					target="_blank"
 				>
 					<i class="fa-brands fa-linkedin"></i>
 				</a>
