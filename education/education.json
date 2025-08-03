@@ -1,0 +1,76 @@
+[
+    {
+        "name": "University of Michigan – Ann Arbor",
+        "gpa": 4.00,
+        "gpa_max": 4.00,
+        "start_date": "2023",
+        "end_date": "2027",
+        "courses": [
+            {
+                "name": "Compiler Construction",
+                "number": "EECS 483",
+                "description": "We developed a compiler over the semester to go from a high-level, functional programming language to SSA, and then to Assembly. Conceptually heavy at times, but a really fun and interesting class that has furthered my interest in this field.",
+                "technologies": [
+                    "Rust"
+                ]
+            },
+            {
+                "name": "Web Systems",
+                "number": "EECS 485",
+                "description": "The first half was familiar to me, but I still learned some new things. I took a lot of interest in distributed systems in the second half, and have since wanted to explore this area more.",
+                "technologies": [
+                    "Python",
+                    "Typescript",
+                    "Flask",
+                    "React",
+                    "PyTest"
+                ]
+            },
+            {
+                "name": "Game Design and Development",
+                "number": "EECS 494",
+                "description": "An infinite time sink during an already busy semester, but a rewarding and fun class. I did a lot of programming, as well as work with shaders and art!",
+                "technologies": [
+                    "Unity",
+                    "CSharp",
+                    "Jira"
+                ]
+            },
+            {
+                "name": "Foundations of Computer Science",
+                "number": "EECS 376",
+                "description": "I really enjoyed the content of this class, especially algorithms and reducations, but the class was nevertheless quite challenging for me.",
+                "technologies": [
+                    "Latex"
+                ]
+            },
+            {
+                "name": "Introduction to Computer Organization",
+                "number": "EECS 370",
+                "description": "",
+                "technologies": [
+                    "C"
+                ]
+            },
+            {
+                "name": "Data Structures and Algorithms",
+                "number": "EECS 281",
+                "description": "",
+                "technologies": [
+                    "CPlusPlus"
+                ]
+            },
+            {
+                "name": "Computer Science Pragmatics",
+                "number": "EECS 201",
+                "description": "Cool class, would recommend",
+                "technologies": [
+                    "Bash",
+                    "Linux",
+                    "Git",
+                    "Vim"
+                ]
+            }
+        ]
+    }
+]
