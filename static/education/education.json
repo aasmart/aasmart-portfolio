@@ -9,7 +9,7 @@
             {
                 "name": "Compiler Construction",
                 "number": "EECS 483",
-                "description": "Crashed out like seven times.",
+                "description": "We developed a compiler over the semester to go from a high-level, functional programming language to SSA, and then to Assembly. Conceptually heavy at times, but a really fun and interesting class that has furthered my interest in this field.",
                 "technologies": [
                     "Rust"
                 ]
@@ -17,7 +17,7 @@
             {
                 "name": "Web Systems",
                 "number": "EECS 485",
-                "description": "HOW DID I FAIL LIKE THREE PRIVATE TESTS??? I TESTED MAP REDUCE 233 TIMES I SWEAR!",
+                "description": "The first half was familiar to me, but I still learned some new things. I took a lot of interest in distributed systems in the second half, and have since wanted to explore this area more.",
                 "technologies": [
                     "Python",
                     "Typescript",
@@ -29,7 +29,7 @@
             {
                 "name": "Game Design and Development",
                 "number": "EECS 494",
-                "description": "I didn't do my teammate's shader. I now fear for my life every day.",
+                "description": "An infinite time sink during an already busy semester, but a rewarding and fun class. I did a lot of programming, as well as work with shaders and art!",
                 "technologies": [
                     "Unity",
                     "CSharp",
@@ -39,7 +39,7 @@
             {
                 "name": "Foundations of Computer Science",
                 "number": "EECS 376",
-                "description": "Nearly cooked me.",
+                "description": "I really enjoyed the content of this class, especially algorithms and reducations, but the class was nevertheless quite challenging for me.",
                 "technologies": [
                     "Latex"
                 ]
@@ -47,7 +47,7 @@
             {
                 "name": "Introduction to Computer Organization",
                 "number": "EECS 370",
-                "description": "Was free until the final exam tore a hole in the fabric of the universe.",
+                "description": "",
                 "technologies": [
                     "C"
                 ]
@@ -55,7 +55,7 @@
             {
                 "name": "Data Structures and Algorithms",
                 "number": "EECS 281",
-                "description": "Trolled by runtime on a single test case on p1, but secured that free A+ and an IA position.",
+                "description": "",
                 "technologies": [
                     "CPlusPlus"
                 ]
@@ -63,7 +63,7 @@
             {
                 "name": "Computer Science Pragmatics",
                 "number": "EECS 201",
-                "description": "Cool class.",
+                "description": "Cool class, would recommend",
                 "technologies": [
                     "Bash",
                     "Linux",
