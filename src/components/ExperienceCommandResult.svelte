@@ -31,10 +31,10 @@
 		<span class="inline-block font-bold text-blue-400">do</span>
 	</h2>
 
-	<ul class="flex flex-col gap-4 border-l-4 border-gray-300 pl-4 dark:border-gray-600">
+	<ul class="flex flex-col gap-4 border-l-2 border-gray-300 pl-4 dark:border-gray-700">
 		{#each experiences as exp}
 			<li
-				class="relative before:absolute before:-left-7 before:top-3 before:h-[20px] before:w-[20px] before:rotate-45 before:rounded-md before:bg-blue-400"
+				class="relative before:absolute before:-left-[1.7em] before:top-3 before:h-[20px] before:w-[20px] before:rotate-45 before:rounded-md before:bg-blue-400"
 			>
 				<ExperienceItem item={exp}></ExperienceItem>
 			</li>

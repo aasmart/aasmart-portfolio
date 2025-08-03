@@ -37,8 +37,8 @@ export type Education = {
     name: string;
     gpa: number;
     gpa_max: number;
-    start_year: number;
-    end_year: number;
+    start_date: number;
+    end_date: number;
     courses: Course[];
 }
 
