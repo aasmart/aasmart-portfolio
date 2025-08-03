@@ -113,11 +113,11 @@
 			<span class="h-min text-center">aasmart</span>
 		</h1>
 		<ul class="flex flex-row flex-wrap gap-2">
-			<NavButton command={'about'} {addToHistory} />
-			<NavButton command={'projects'} {addToHistory} />
-			<NavButton command={'experience'} {addToHistory} />
-			<NavButton command={'education'} {addToHistory} />
 			<NavButton command={'theme'} {addToHistory} />
+			<NavButton command={'about'} {addToHistory} />
+			<NavButton command={'experience'} {addToHistory} />
+			<NavButton command={'projects'} {addToHistory} />
+			<NavButton command={'education'} {addToHistory} />
 			<NavButton command={'clear'} {addToHistory} />
 		</ul>
 	</nav>
