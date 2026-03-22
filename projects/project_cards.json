@@ -90,15 +90,5 @@
         "description": "A puzzle-platformer video game with magnets as its core mechanic.",
         "start_date": "2025-3-01",
         "end_date": "2025-4-01"
-    },
-    {
-        "id": "wip",
-        "name": "WIP",
-        "technologies": [],
-        "description": "I'm working on adding more projects here :)",
-        "images": [
-            "under_construction_PNG68.png"
-        ],
-        "start_date": "2025-02-01"
     }
 ]
