@@ -59,7 +59,7 @@
 				<span class="font-bold text-blue-400">=</span>
 				<span class="font-bold text-gray-400 dark:text-gray-500">(</span>
 			</p>
-			<ul class="gap- flex flex-col">
+			<ul class="flex flex-col gap-2">
 				{#each item.courses as course}
 					<li>
 						<EducationCourseItem {course}></EducationCourseItem>
