@@ -27,7 +27,7 @@
 		<p class="h-max w-full text-center lg:text-start">
 			Hi! <span>👋</span> I'm currently an undergraduate student at the University of Michigan
 			&mdash; Ann Arbor. I enjoy (with various levels of interest) an array of topics from
-			programming, CS thoery, and hardware. However, I've discovered that I especially enjoy
+			programming, theory, and hardware. However, I've discovered that I especially enjoy
 			programming languages, systems, and building useful software.
 			<br /><br />
 			Outside of computer programming, I frequently go to the gym and mainly do calisthenics (I have
