@@ -1,9 +1,18 @@
 [
     {
+        "name": "Stripe",
+        "title": "Software Engineer Intern",
+        "description": "Sandboxes",
+        "start_date": "2026-06-01",
+        "technologies": [
+            "Java"
+        ]
+    },
+    {
         "name": "EECS 482 @ University of Michigan",
         "title": "Operating Systems TA",
-        "description": "Leading lab sections, holding office hours, and helping students learn the Right Way™",
-        "start_date": "2026-01-08",
+        "description": "Teaching multi-threaded concurrency, virtual memory, and file systems. Leading lab sections, holding office hours, and helping students learn the Right Way™",
+        "start_date": "2026-01-09",
         "technologies": [
             "CPlusPlus"
         ]
@@ -23,7 +32,7 @@
         "name": "EECS 281 @ UofM",
         "title": "DS&A TA",
         "description": "Leading lab sections, holding office hours, and actively seeking to improve existing course material (e.g. I redid our lab slides on DP with 100+ new slides because the existing ones presented a single problem that was too hard for most students to understand.)",
-        "start_date": "2024-08-01",
+        "start_date": "2024-08-12",
         "end_date": "2026-01-08",
         "technologies": [
             "CPlusPlus"

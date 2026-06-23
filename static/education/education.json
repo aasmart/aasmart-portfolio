@@ -7,6 +7,22 @@
         "end_date": "2027",
         "courses": [
             {
+                "name": "Intro to Machine Learning",
+                "number": "EECS 445",
+                "description": "Dont underfit. But also don't overfit.",
+                "technologies": [
+                    "Python"
+                ]
+            },
+            {
+                "name": "Distributed Systems",
+                "number": "EECS 491",
+                "description": "Paxos go brrrrrr",
+                "technologies": [
+                    "Go"
+                ]
+            },
+            {
                 "name": "Operating Systems w/ Advanced Projects",
                 "number": "EECS 482 + EECS 408",
                 "description": "I IA for this course! I learned quite a bit about concurrency, networking, and especially virtual memory. However, I learned a lot more about debugging. A lot about debugging, especially the incredible value of spamming as many assertions as humanly possible + fuzzing.",
